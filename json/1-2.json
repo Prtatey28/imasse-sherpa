@@ -1,0 +1,105 @@
+{
+  "academy": "Arts, Humanities, & Performing Arts Academy",
+  "pathway": "Humanities (HUM)",
+  "version": 2023,
+  "credits": [
+    {
+      "foundation": 2.5,
+      "supporting": 2
+    }
+  ],
+  "foundation": [],
+  "supporting": [
+    {
+      "7": [
+        {
+          "name": "Academy Capstone"
+        }
+      ],
+      "8": [
+        {
+          "name": "Capstone: Digital Media & Communication"
+        }
+      ],
+      "9": [
+        {
+          "name": "Commercial Photography I"
+        }
+      ],
+      "10": [
+        {
+          "name": "Commercial Photography II"
+        }
+      ],
+      "11": [
+        {
+          "name": "Graphic Design & Illustration I (Intro to Graphic Design)"
+        }
+      ],
+      "12": [
+        {
+          "name": "Introduction to Business"
+        }
+      ],
+      "13": [
+        {
+          "name": "Marketing Principles"
+        }
+      ],
+      "14": [
+        {
+          "name": "Performing & Communications A (Drama - Acting/Performance)"
+        }
+      ],
+      "15": [
+        {
+          "name": "Photography (Intro - Adv.)"
+        }
+      ],
+      "16": [
+        {
+          "name": "Public Speaking"
+        }
+      ],
+      "17": [
+        {
+          "name": "Technical Theatre A (Stagecraft)"
+        }
+      ]
+    }
+  ],
+  "both": [
+    {
+      "1": [
+        {
+          "name": "Audio/Video Production I"
+        }
+      ],
+      "2": [
+        {
+          "name": "Audio/Video Production II"
+        }
+      ],
+      "3": [
+        {
+          "name": "Broadcast Production (Broadcasting Technology)"
+        }
+      ],
+      "4": [
+        {
+          "name": "Filmmaking (Audio/Video Production III)"
+        }
+      ],
+      "5": [
+        {
+          "name": "Film Studies"
+        }
+      ],
+      "6": [
+        {
+          "name": "Television Production"
+        }
+      ]
+    }
+  ]
+}
