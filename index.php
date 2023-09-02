@@ -6,6 +6,8 @@
   <title>Sherpa - Pathway Home</title>
 </head>
 <body style="display: none">
+
+<!--This is the start of the CSS for designing the website first page-->
 <style>
     * {
   box-sizing: border-box;
@@ -13,8 +15,8 @@
 
 body {
   font: 16px Arial;  
+  background-color: #6e6b6a;
 }
-
 /*the container must be positioned relative:*/
 .autocomplete {
   position: relative;
@@ -24,7 +26,7 @@ body {
 
 input {
   border: 1px solid transparent;
-  background-color: #f1f1f1;
+  background-color: #00ff00;
   padding: 10px;
   font-size: 16px;
 }
@@ -40,6 +42,7 @@ input[type=submit] {
   cursor: pointer;
   width: 19%;
 }
+
 
 .autocomplete-items {
    position: absolute;
@@ -89,19 +92,25 @@ input[type=submit] {
     width: 300px;
 }
 </style>
+<h1>
+<p style="text-align:center">Welcome to Sherpa! Input Classes Below!</p>
+</h1>
+
 <div class="container">
     <div class='logo'>
 <img src="img/sherpa-logo.svg">
 </div>
-<form autocomplete="off" id="form" action="/search" method="post">
+<form autocomplete="off" id="form" action="/search.php" method="post">
     <div class="autocomplete">
   <input id="input" type="text" placeholder="Start Typing Class Name" name="input">
   </div>
   <input type="submit" value="Search" name="submit">
 </form>
-<p>Classes Entered</p>
+<p style="background-color:#fff;text-align:center">Classes Entered</p>
 <ul id="classes"></ul>
 </div>
+
+
 <script>
 var counter = 0;
 let classesEntered = [];
