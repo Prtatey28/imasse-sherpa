@@ -189,7 +189,7 @@ h2 {
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grip-gap: 10px;
+  grid-gap: 10px;
   margin-bottom: 100px;
 }
 form {
