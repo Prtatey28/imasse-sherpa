@@ -221,7 +221,7 @@ function autocomplete(inp, arr) {
   });
 }
 
-//Sets the variable "data" equal to a string of this entire JSON file
+//Sets the variable "data" equal to a string of this entire JSON file this JSON file is also what populates the possible search results aswell
 var data = `
 [
     {
@@ -233,7 +233,7 @@ var data = `
       "name": "Audio/Video Production II"
     },
     {
-      "id": "3-2",
+      "id": "3-1",
       "name": "Broadcast Production (Broadcasting Technology)"
     },
     {
@@ -245,7 +245,7 @@ var data = `
       "name": "Film Studies"
     },
     {
-      "id": "6-2",
+      "id": "6-1",
       "name": "Television Production"
     },
     {
@@ -289,8 +289,12 @@ var data = `
       "name": "Public Speaking"
     },
     {
-      "id": "17-2",
+      "id": "17-1",
       "name": "Technical Theatre A (Stagecraft)"
+    },
+    {
+      "id": "18-1",
+      "name": "Any Publication Class"
     }
   ]`;
 

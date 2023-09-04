@@ -1,0 +1,95 @@
+{
+    "academy": "Business and Global Stuides",
+    "pathway": "Business Administration, Marketing and Leadership",
+    "version": 2023,
+    "credits": [
+      {
+        "foundation": 1.5,
+        "supporting": 2.5
+      }
+    ],
+    "foundation": [],
+    "supporting": [
+      {
+        "5": [
+          {
+            "name": "Academy Capstone"
+          }
+        ],
+        "6": [
+          {
+            "name": "Any Publication Class"
+          }
+        ],
+        "7": [
+          {
+            "name": "AP Macroeconomics"
+          }
+        ],
+        "8": [
+          {
+            "name": "Capstone: Business/Marketing"
+          }
+        ],
+        "9": [
+          {
+            "name": "Event Planning Committee (on transcript) (aka Leadership)"
+          }
+        ],
+        "10": [
+          {
+            "name": "Intership (on transcript)"
+          }
+        ],
+        "11": [
+          {
+            "name": "Psychology or AP Psychology"
+          }
+        ],
+        "12": [
+          {
+            "name": "School Based Operations/Mgmt"
+          }
+        ],
+        "13": [
+          {
+            "name": "Sociology"
+          }
+        ],
+        "14": [
+          {
+            "name": "Statistics (AP or CU Succeeds)"
+          }
+        ],
+        "15": [
+          {
+            "name": "World Language Level III and above"
+          }
+        ]
+      }
+    ],
+    "both": [
+      {
+        "1": [
+          {
+            "name": "AMPED on Algebra"
+          }
+        ],
+        "2": [
+          {
+            "name": "Construction Management"
+          }
+        ],
+        "3": [
+          {
+            "name": "Public Speaking"
+          }
+        ],
+        "4": [
+          {
+            "name": "Any Business &/or Marketing Class"
+          }
+        ]
+      }
+    ]
+  }
