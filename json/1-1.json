@@ -4,8 +4,8 @@
   "version": 2023,
   "credits": [
     {
-      "foundation": 2.5,
-      "supporting": 2
+      "foundation": 1.5,
+      "supporting": 2.5
     }
   ],
   "foundation": [],
@@ -38,30 +38,20 @@
       ],
       "12": [
         {
-          "name": "Introduction to Business"
+          "name": "Intro to Business"
         }
       ],
       "13": [
         {
-          "name": "Marketing Principles"
+          "name": "Photography (Intro - Adv.)"
         }
       ],
       "14": [
         {
-          "name": "Performing & Communications A (Drama - Acting/Performance)"
-        }
-      ],
-      "15": [
-        {
-          "name": "Photography (Intro - Adv.)"
-        }
-      ],
-      "16": [
-        {
           "name": "Public Speaking"
         }
       ],
-      "17": [
+      "15": [
         {
           "name": "Technical Theatre A (Stagecraft)"
         }

@@ -1,6 +1,8 @@
 <?php
 $file = file_get_contents("json/test.json");
 $file = json_decode($file, true);
+//This $POST command grabs the array from the previous page, index.php and passes it to this one
+//It passes both the year long classes and the semester long classes
 array_shift($_POST);
 array_shift($_POST);
 $yearLong = array();
@@ -15,10 +17,11 @@ foreach($_POST as $c){
     }
 
 }
-
+//Year long classes are marked with a -2 instead of -1 in classes.json
 //$yearLong = array(3, 6, 17);
 //$semesterLong = array(4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15);
 ?>
+
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +32,6 @@ foreach($_POST as $c){
 
 <body style="display: none">
   <?php
-  
 foreach($file as $y){
     ?>
     
@@ -112,7 +114,7 @@ foreach($semesterLong as $x ) {
 }
     $credFoundation = max($credFoundation, 0);
     $credSupporting = max($credSupporting, 0);
-    $percent = round(100*(1-(($credFoundation + $credSupporting)/($required['foundation'] + $required['supporting'])))) . '%';
+  $percent = round(100*(1-(($credFoundation + $credSupporting)/($required['foundation'] + $required['supporting'])))) . '%';
     ?>
     <div class="path1">
       <h2><?= $pathway['pathway'] ?>
