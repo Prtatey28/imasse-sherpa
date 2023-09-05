@@ -144,9 +144,9 @@ foreach($semesterLong as $x ) {
 
 <style>
 .badge {
-    width: 90px;
-    height: 90px;
-    border-radius: 360px;
+    max-width: 15%;
+    height: auto;
+    width: auto;
 }
 .header {
   padding: 10px;
