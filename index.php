@@ -46,7 +46,7 @@ input[type=text] {
 
 /*This is the CSS for the search button of the webpage*/
 input[type=submit] {
-  background-color: DodgerBlue;
+  background-color: dodgerblue;
   color: #fff;
   cursor: pointer;
   width: 19%;
