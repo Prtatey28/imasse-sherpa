@@ -1,6 +1,8 @@
 <?php
 $file = file_get_contents("json/test.json");
 $file = json_decode($file, true);
+
+
 //This $POST command grabs the array from the previous page, index.php and passes it to this one
 //It passes both the year long classes and the semester long classes
 array_shift($_POST);
@@ -125,6 +127,7 @@ foreach($semesterLong as $x ) {
             foreach($completedClasses as $x){
                 echo '<li>'. $x .'</li>';
             }
+            
         ?>
       </ul>
     </div>
@@ -176,6 +179,13 @@ h1 {
 }
 p {
   text-align: left;
+  font-family: arial;
+  font-size: 16px;
+  color: black;
+  text-indent: 25px;
+}
+p2 {
+  text-align: right;
   font-family: arial;
   font-size: 16px;
   color: black;

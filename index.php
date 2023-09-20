@@ -107,8 +107,62 @@ input[type=submit] {
 
 <!--This piece of the code is all about making everything show up on the website. This is typical HTML-->
 <!--Title Header-->
+<?php
+//array grabber adapted from: https://www.ravelrumba.com/blog/json-google-spreadsheets/
+$feed = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQrEPM2Hf88Xzq9_0NM-Oh0nU1raNVuAPfftDKNd5f2KNAwgSmOxl_20c9VsNINp1niQfzWdyNrRVlL/pub?output=csv';
+$keys = array();
+$newArray = array();
+
+function csvToArray($file, $delimiter){
+  if (($handle = fopen($file, 'r')) !== FALSE){
+    $i = 0;
+    while (($lineArray = fgetcsv($handle, 4000, $delimiter, '"')) !== FALSE) {
+      for ($j = 0; $j < count($lineArray); $j++){
+        $arr[$i][$j] = $lineArray[$j];
+      }
+      $i++;
+    }
+    fclose($handle);
+  }
+  return $arr;
+}
+
+// Do it
+$data = csvToArray($feed, ',');
+ 
+// Set number of elements (minus 1 because we shift off the first row)
+$count = count($data) - 1;
+ 
+//Use first row for names  
+$labels = array_shift($data);  
+ 
+foreach ($labels as $label) {
+  $keys[] = $label;
+}
+ 
+// Add Ids, just in case we want them later
+$keys[] = 'id';
+ 
+for ($i = 0; $i < $count; $i++) {
+  $data[$i][] = $i;
+}
+ 
+// Bring it all together
+for ($j = 0; $j < $count; $j++) {
+  $d = array_combine($keys, $data[$j]);
+  $newArray[$j] = $d;
+}
+ 
+// Print it out as JSON
+echo json_encode($newArray);
+
+// writeJson adapted from: https://stackoverflow.com/questions/57731341/how-to-push-a-new-object-into-a-json-file-using-php
+// Push $newArray into JSON file COOLIO
+$writeJson = file_put_contents("COOLIO.json", json_encode($newArray));
+
+?>
 <h1>
-<p style="text-align:center">Welcome to Sherpa! Input Classes Below!</p>
+<p style="text-align:center"><?php print($newArray) ?></p>
 </h1>
 
 <!--This piece of the code places all of the elements on the website, based on their CSS location, size, and color-->
