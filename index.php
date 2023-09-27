@@ -150,15 +150,20 @@ for ($i = 0; $i < $count; $i++) {
 // Bring it all together
 for ($j = 0; $j < $count; $j++) {
   $d = array_combine($keys, $data[$j]);
+  
   $newArray[$j] = $d;
 }
  
 // Print it out as JSON
 echo json_encode($newArray);
 
+
+$writeJson = file_put_contents("A1-P1.json", json_encode($newArray));
 // writeJson adapted from: https://stackoverflow.com/questions/57731341/how-to-push-a-new-object-into-a-json-file-using-php
 // Push $newArray into JSON file COOLIO
-$writeJson = file_put_contents("COOLIO.json", json_encode($newArray));
+//for ($x = 0; $x < count($newArray); $x++){
+  //$writeJson = file_put_contents("COOLIO2.json", json_encode(json_decode(implode($newArray[0])),JSON_PRETTY_PRINT));
+//}
 
 ?>
 <h1>
