@@ -5,7 +5,7 @@
         "color": "#007cba",
         "logo": "img/badges/1.png",
         "url": "https://sites.google.com/jeffcoschools.us/academyprogram/arts-humanities-performing-arts?authuser=0",
-        "id":["1-1", "1-2", "1-3", "1-4"]
+        "id":["A1-P1"]
         }
     ],
     "2":[
@@ -14,7 +14,7 @@
         "color": "#3fa046",
         "logo": "img/badges/2.png",
         "url": "https://sites.google.com/jeffcoschools.us/academyprogram/business-global-studies?authuser=0",
-        "id":["2-1","1-2","1-3"]
+        "id":[]
         }
     ],
     "3":[
