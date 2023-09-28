@@ -48,10 +48,21 @@ foreach($y[0]['id'] as $z){
 $pathway = file_get_contents("json/". $z .".json");
 $pathway = json_decode($pathway, true);
 
-$foundation = $pathway['foundation'][0];
-$supporting = $pathway['supporting'][0];
 
-$required = $pathway['credits'][0];
+//echo $pathway[0]['classId'];
+for($i=0; $i<count($pathway); $i++){
+  //echo $pathway[$i];
+  for($j=0; $j<1; $j++){
+    echo $pathway[$i]['creditType'];
+    echo " ";
+  }
+}
+//foreach($pathway[0][''])
+//$foundation = $pathway['foundation'][0];
+//$supporting = $pathway['supporting'][0];
+
+?>
+<!--$required = $pathway['credits'][0];
 $credFoundation = $required['foundation'];
 $credSupporting = $required['supporting'];
 
@@ -117,6 +128,7 @@ foreach($semesterLong as $x ) {
     $credSupporting = max($credSupporting, 0);
   $percent = round(100*(1-(($credFoundation + $credSupporting)/($required['foundation'] + $required['supporting'])))) . '%';
     ?>
+-->
     <div class="path1">
       <h2><?= $pathway['pathway'] ?>
       <p>Pathway <?= $percent ?> Completed</p>
@@ -209,4 +221,4 @@ form {
 </style>
 <script>
     document.getElementsByTagName('body')[0].style = 'display: block';
-</script>
+</script> 
