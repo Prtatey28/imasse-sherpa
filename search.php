@@ -1,5 +1,5 @@
 <?php
-$file = file_get_contents("json/test.json");
+$file = file_get_contents("json/searchProgram.json");
 $file = json_decode($file, true);
 
 
@@ -48,7 +48,6 @@ foreach($y[0]['id'] as $z){
 $pathway = file_get_contents("json/". $z .".json");
 $pathway = json_decode($pathway, true);
 
-$both = $pathway['both'][0];
 $foundation = $pathway['foundation'][0];
 $supporting = $pathway['supporting'][0];
 

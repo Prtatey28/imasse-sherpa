@@ -158,7 +158,7 @@ for ($j = 0; $j < $count; $j++) {
 echo json_encode($newArray);
 
 
-$writeJson = file_put_contents("A1-P1.json", json_encode($newArray));
+$writeJson = file_put_contents("json/A1-P1.json", json_encode($newArray));
 // writeJson adapted from: https://stackoverflow.com/questions/57731341/how-to-push-a-new-object-into-a-json-file-using-php
 // Push $newArray into JSON file COOLIO
 //for ($x = 0; $x < count($newArray); $x++){
