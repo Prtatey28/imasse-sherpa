@@ -70,11 +70,12 @@ for($i=0; $i<count($pathway); $i++){
       array_push($supporting, $pathway[$i]['classId']);
     }
     if ($pathway[$i]['creditType']=='F#'){
-      array_push($foundationMin, $pathway[$i][(int)('credit')]);
+      array_push($foundationMin, $pathway[$i][floatval(('credit'))]);
+      echo floatval($pathway[$i]['credit']);
     }
     if ($pathway[$i]['creditType']=='S#'){
-      array_push($supportingMin, $pathway[$i][(int)('credit')]);
-      echo $pathway[$i][(int)('creditsPossible')];
+      array_push($supportingMin, $pathway[$i][floatval('credit')]);
+      echo floatval($pathway[$i][('credit')]);
     }
   }
 }
@@ -86,12 +87,6 @@ for($i=0; $i<count($supporting); $i++){
   echo $supporting[$i];
   echo " ";
 }
-
-//echo $foundation[0][0];
-//foreach($pathway[0][''])
-//$foundation = $pathway['foundation'][0];
-//$supporting = $pathway['supporting'][0];
-
 ?>
 <!--$required = $pathway['credits'][0];
 $credFoundation = $required['foundation'];
