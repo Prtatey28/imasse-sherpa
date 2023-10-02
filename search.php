@@ -49,14 +49,45 @@ $pathway = file_get_contents("json/". $z .".json");
 $pathway = json_decode($pathway, true);
 
 
+//array of foundation classes possible for this pathway
+$foundation = array();
+//minimum number of credits needed for foundation in this pathway
+$foundationMin = array();
+//array of supporting classes possible for this pathway
+$supporting = array();
+//minimum number of credits needed for supporting in this pathway
+$supportingMin = array();
 //echo $pathway[0]['classId'];
 for($i=0; $i<count($pathway); $i++){
   //echo $pathway[$i];
   for($j=0; $j<1; $j++){
     echo $pathway[$i]['creditType'];
     echo " ";
+    if ($pathway[$i]['creditType']=='f'){
+      array_push($foundation, $pathway[$i]['classId']);
+    }
+    if ($pathway[$i]['creditType']=='s'){
+      array_push($supporting, $pathway[$i]['classId']);
+    }
+    if ($pathway[$i]['creditType']=='F#'){
+      array_push($foundationMin, $pathway[$i][(int)('credit')]);
+    }
+    if ($pathway[$i]['creditType']=='S#'){
+      array_push($supportingMin, $pathway[$i][(int)('credit')]);
+      echo $pathway[$i][(int)('creditsPossible')];
+    }
   }
 }
+for($i=0; $i<count($foundation); $i++){
+  echo $foundation[$i];
+  echo " ";
+}
+for($i=0; $i<count($supporting); $i++){
+  echo $supporting[$i];
+  echo " ";
+}
+
+//echo $foundation[0][0];
 //foreach($pathway[0][''])
 //$foundation = $pathway['foundation'][0];
 //$supporting = $pathway['supporting'][0];
