@@ -196,11 +196,11 @@ foreach ($labels as $label) {
 }
  
 // Add Ids, just in case we want them later
-$keys[] = 'id';
+/*$keys[] = 'id';
  
 for ($i = 0; $i < $count; $i++) {
   $data[$i][] = $i;
-}
+}*/
  
 // Bring it all together
 for ($j = 0; $j < $count; $j++) {
@@ -240,6 +240,18 @@ $writeJson = file_put_contents("json/allClasses.json", json_encode($newArray));
 
 <!--This is the JavaScript portion of the code. This is how the populating search bar works and and how selected classes are printed below-->
 <script>
+/*function Fetch() {
+    fetch("/json/allClasses.json")
+        .then((res) => {
+        return res.json();  
+    })
+}*/
+
+var data2 = <?php echo json_encode($newArray);?>;
+console.log(data2);
+
+
+
 var counter = 0;
 let classesEntered = [];
 function autocomplete(inp, arr) {
@@ -329,6 +341,14 @@ function autocomplete(inp, arr) {
       closeAllLists(e.target);
   });
 }
+
+//grabbing classes from allClasses.json
+
+
+
+
+
+
 
 //Sets the variable "data" equal to a string of this entire JSON file this JSON file is also what populates the possible search results aswell
 var data = `
