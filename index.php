@@ -155,7 +155,7 @@ for ($j = 0; $j < $count; $j++) {
 }
  
 // Print it out as JSON
-echo json_encode($newArray);
+//echo json_encode($newArray);
 
 // writeJson adapted from: https://stackoverflow.com/questions/57731341/how-to-push-a-new-object-into-a-json-file-using-php
 $writeJson = file_put_contents("json/A1-P1.json", json_encode($newArray));
@@ -210,14 +210,14 @@ for ($j = 0; $j < $count; $j++) {
 }
  
 // Print it out as JSON
-echo json_encode($newArray);
+//echo json_encode($newArray);
 
 // writeJson adapted from: https://stackoverflow.com/questions/57731341/how-to-push-a-new-object-into-a-json-file-using-php
 $writeJson = file_put_contents("json/allClasses.json", json_encode($newArray));
 
 ?>
 <h1>
-<p style="text-align:center"><?php print($newArray) ?></p>
+<p style="text-align:center"> WELCOME TO SHERPA!</p>
 </h1>
 
 <!--This piece of the code places all of the elements on the website, based on their CSS location, size, and color-->
@@ -241,6 +241,7 @@ $writeJson = file_put_contents("json/allClasses.json", json_encode($newArray));
 <!--This is the JavaScript portion of the code. This is how the populating search bar works and and how selected classes are printed below-->
 <script>
 //grabs the php array from above and uses it here for the possible classes search bar
+//echo part of code adapted from https://www.geeksforgeeks.org/how-to-pass-a-php-array-to-a-javascript-function/#
 var data2 = <?php echo json_encode($newArray);?>;
 console.log(data2);
 
