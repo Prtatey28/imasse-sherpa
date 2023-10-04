@@ -240,13 +240,7 @@ $writeJson = file_put_contents("json/allClasses.json", json_encode($newArray));
 
 <!--This is the JavaScript portion of the code. This is how the populating search bar works and and how selected classes are printed below-->
 <script>
-/*function Fetch() {
-    fetch("/json/allClasses.json")
-        .then((res) => {
-        return res.json();  
-    })
-}*/
-
+//grabs the php array from above and uses it here for the possible classes search bar
 var data2 = <?php echo json_encode($newArray);?>;
 console.log(data2);
 
@@ -342,95 +336,8 @@ function autocomplete(inp, arr) {
   });
 }
 
-//grabbing classes from allClasses.json
-
-
-
-
-
-
-
-//Sets the variable "data" equal to a string of this entire JSON file this JSON file is also what populates the possible search results aswell
-var data = `
-[
-    {
-      "id": "1-1",
-      "name": "Audio/Video Production I"
-    },
-    {
-      "id": "2-1",
-      "name": "Audio/Video Production II"
-    },
-    {
-      "id": "3-1",
-      "name": "Broadcast Production (Broadcasting Technology)"
-    },
-    {
-      "id": "4-1",
-      "name": "Filmmaking (Audio/Video Production III)"
-    },
-    {
-      "id": "5-1",
-      "name": "Film Studies"
-    },
-    {
-      "id": "6-1",
-      "name": "Television Production"
-    },
-    {
-      "id": "7-1",
-      "name": "Academy Capstone"
-    },
-    {
-      "id": "8-1",
-      "name": "Capstone: Digital Media & Communication"
-    },
-    {
-      "id": "9-1",
-      "name": "Commercial Photography I"
-    },
-    {
-      "id": "10-1",
-      "name": "Commercial Photography II"
-    },
-    {
-      "id": "11-1",
-      "name": "Graphic Design & Illustration I (Intro to Graphic Design)"
-    },
-    {
-      "id": "12-1",
-      "name": "Introduction to Business"
-    },
-    {
-      "id": "13-1",
-      "name": "Marketing Principles"
-    },
-    {
-      "id": "14-1",
-      "name": "Performing & Communications A (Drama - Acting/Performance)"
-    },
-    {
-      "id": "15-1",
-      "name": "Photography (Intro - Adv.)"
-    },
-    {
-      "id": "16-1",
-      "name": "Public Speaking"
-    },
-    {
-      "id": "17-1",
-      "name": "Technical Theatre A (Stagecraft)"
-    },
-    {
-      "id": "18-1",
-      "name": "Any Publication Class"
-    }
-  ]`;
-
-//This creates a javascript object for the entire JSON string of characters above
-var classes = JSON.parse(data);
-
-autocomplete(document.getElementById("input"), classes);
+//grabbing classes from allClasses.json and sending them into the search bar here
+autocomplete(document.getElementById("input"), data2);
     document.getElementsByTagName('body')[0].style = 'display: block';
 </script>
 
