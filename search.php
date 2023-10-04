@@ -46,8 +46,8 @@ $supportingMin = 0.0;
 for($i=0; $i<count($pathway); $i++){
   //echo $pathway[$i];
   for($j=0; $j<1; $j++){
-    echo $pathway[$i]['creditType'];
-    echo " ";
+    //echo $pathway[$i]['creditType'];
+    //echo " ";
     if ($pathway[$i]['creditType']=='f'){
       array_push($foundation, $pathway[$i]['classId']);
     }
@@ -56,36 +56,53 @@ for($i=0; $i<count($pathway); $i++){
     }
     if ($pathway[$i]['creditType']=='F#'){
       $foundationMin = floatval($pathway[$i][('credit')]);
-      echo $foundationMin;
+      //echo $foundationMin;
     }
     if ($pathway[$i]['creditType']=='S#'){
       $supportingMin = floatval($pathway[$i][('credit')]);
-      echo $supportingMin;
+      //echo $supportingMin;
     }
   }
 }
-for($i=0; $i<count($foundation); $i++){
+/*for($i=0; $i<count($foundation); $i++){
   echo $foundation[$i];
   echo " ";
 }
 for($i=0; $i<count($supporting); $i++){
   echo $supporting[$i];
   echo " ";
-}
+}*/
 
 
 //This $POST command grabs the array from the previous page, index.php and passes it to this one
 //It passes both the year long classes and the semester long classes
 array_shift($_POST);
 array_shift($_POST);
-$foundationCount = 0;
-echo json_encode($_POST);
-foreach($_POST as $c){
-  if($c==0){
-    
+$completedClasses = array();
+$foundationCount = 0.0;
+$supportingCount = 0.0;
+for($i=0; $i<count($_POST); $i++){
+  for($j=0; $j<count($pathway); $j++){
+    if($_POST[$i]==$pathway[$j][('classId')]){
+      if($pathway[$j][('creditType')]==('f')){
+        $foundationCount = $foundationCount + $pathway[$j][('credit')];
+      }
+      if($pathway[$j][('creditType')]==('s')){
+        $supportingCount = $supportingCount + $pathway[$j][('credit')];
+      }
+      array_push($completedClasses, $pathway[$j][('name')]);
+    }
   }
 }
 
+/*echo ("Foundation Credits: $foundationCount");
+echo ("_________");
+echo ("Supporting Credits: $supportingCount");*/
+
+
+//calculating total percentage completion of pathway
+$totalPathway = $foundationMin + $supportingMin;
+$percent = (($foundationCount + $supportingCount)/$totalPathway)*100;
 
 
 ?>
@@ -163,7 +180,7 @@ foreach($semesterLong as $x ) {
 -->
     <div class="path1">
       <h2><?= $pathway['pathway'] ?>
-      <p>Pathway <?= $percent ?> Completed</p>
+      <p>Pathway <?= $percent ?>% Completed</p>
       </h2>
       <ul>
         <?php
