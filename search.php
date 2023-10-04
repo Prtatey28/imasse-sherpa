@@ -79,6 +79,9 @@ for($i=0; $i<count($supporting); $i++){
 array_shift($_POST);
 array_shift($_POST);
 $completedClasses = array();
+$foundationClasses = array();
+$supportingClasses = array();
+$pathwayName = " ";
 $foundationCount = 0.0;
 $supportingCount = 0.0;
 for($i=0; $i<count($_POST); $i++){
@@ -86,15 +89,25 @@ for($i=0; $i<count($_POST); $i++){
     if($_POST[$i]==$pathway[$j][('classId')]){
       if($pathway[$j][('creditType')]==('f')){
         $foundationCount = $foundationCount + $pathway[$j][('credit')];
+        array_push($foundationClasses, $pathway[$j][('name')]);
       }
       if($pathway[$j][('creditType')]==('s')){
         $supportingCount = $supportingCount + $pathway[$j][('credit')];
+        array_push($supportingClasses, $pathway[$j][('name')]);
       }
       array_push($completedClasses, $pathway[$j][('name')]);
     }
   }
 }
 
+
+
+
+for($j=0; $j<count($pathway); $j++){
+  if($pathway[$j][('creditType')]==('NAME')){
+    $pathwayName = $pathway[$j][('name')];
+  }
+}
 /*echo ("Foundation Credits: $foundationCount");
 echo ("_________");
 echo ("Supporting Credits: $supportingCount");*/
@@ -102,7 +115,19 @@ echo ("Supporting Credits: $supportingCount");*/
 
 //calculating total percentage completion of pathway
 $totalPathway = $foundationMin + $supportingMin;
-$percent = (($foundationCount + $supportingCount)/$totalPathway)*100;
+
+if($foundationCount > $foundationMin){
+  $foundationCount = $foundationMin;
+}
+if($supportingCount > $supportingMin){
+  $supportingCount = $supportingMin;
+}
+
+
+
+$percent = round((($foundationCount + $supportingCount)/$totalPathway)*100)."%";
+$foundationPercent = round(($foundationCount/$foundationMin)*100)."%";
+$supportingPercent = round(($supportingCount/$supportingMin)*100)."%";
 
 
 ?>
@@ -180,15 +205,30 @@ foreach($semesterLong as $x ) {
 -->
     <div class="path1">
       <h2><?= $pathway['pathway'] ?>
-      <p>Pathway <?= $percent ?>% Completed</p>
+      <p>Pathway: <?php echo $pathwayName ?> </p>
+      <p>Pathway Progress: <?= $percent ?> Completed</p>
+      <p><i><mark>Foundation Classes: <?= $foundationPercent ?> Completed</mark></p>
+      <p><mark>Supporting Classes: <?= $supportingPercent ?> Completed</mark></i></p>
       </h2>
       <ul>
-        <?php
+        <!-- <p2><i><u>Completed Classes:</i></u></p2>
+        <p><?php
             foreach($completedClasses as $x){
                 echo '<li>'. $x .'</li>';
             }
-            
-        ?>
+        ?></p> -->
+        <p2><i><u>Completed Foundation Classes:</i></u></p2>
+        <p><?php
+            foreach($foundationClasses as $x){
+                echo '<li>'. $x .'</li>';
+            }
+        ?></p>
+        <p2><i><u>Completed Supporting Classes:</i></u></p2>
+        <p><?php
+            foreach($supportingClasses as $x){
+                echo '<li>'. $x .'</li>';
+            }
+        ?></p>
       </ul>
     </div>
     <?php
@@ -252,10 +292,17 @@ p2 {
   text-indent: 25px;
 }
 h2 {
-  text-align: left;
+  text-align: center;
   color: black;
   font-family: lato;
   font-size: 20px;
+}
+p3 {
+  text-align: left;
+  font-family: arial;
+  font-size: 16px;
+  color: black;
+  text-indent: 25px;
 }
 
 .grid-container {
