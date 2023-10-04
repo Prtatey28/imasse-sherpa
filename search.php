@@ -3,22 +3,7 @@ $file = file_get_contents("json/searchProgram.json");
 $file = json_decode($file, true);
 
 
-//This $POST command grabs the array from the previous page, index.php and passes it to this one
-//It passes both the year long classes and the semester long classes
-array_shift($_POST);
-array_shift($_POST);
-$yearLong = array();
-$semesterLong = array();
-foreach($_POST as $c){
-    $split = explode('-', $c);
-    if($split[1] == 2){
-        array_push($yearLong, $split[0]);
-    }
-    else {
-        array_push($semesterLong, $split[0]);
-    }
 
-}
 //Year long classes are marked with a -2 instead of -1 in classes.json
 //$yearLong = array(3, 6, 17);
 //$semesterLong = array(4, 5, 7, 8, 9, 10, 11, 12, 13, 14, 15);
@@ -52,11 +37,11 @@ $pathway = json_decode($pathway, true);
 //array of foundation classes possible for this pathway
 $foundation = array();
 //minimum number of credits needed for foundation in this pathway
-$foundationMin = array();
+$foundationMin = 0.0;
 //array of supporting classes possible for this pathway
 $supporting = array();
 //minimum number of credits needed for supporting in this pathway
-$supportingMin = array();
+$supportingMin = 0.0;
 //echo $pathway[0]['classId'];
 for($i=0; $i<count($pathway); $i++){
   //echo $pathway[$i];
@@ -70,12 +55,12 @@ for($i=0; $i<count($pathway); $i++){
       array_push($supporting, $pathway[$i]['classId']);
     }
     if ($pathway[$i]['creditType']=='F#'){
-      array_push($foundationMin, $pathway[$i][floatval(('credit'))]);
-      echo floatval($pathway[$i]['credit']);
+      $foundationMin = floatval($pathway[$i][('credit')]);
+      echo $foundationMin;
     }
     if ($pathway[$i]['creditType']=='S#'){
-      array_push($supportingMin, $pathway[$i][floatval('credit')]);
-      echo floatval($pathway[$i][('credit')]);
+      $supportingMin = floatval($pathway[$i][('credit')]);
+      echo $supportingMin;
     }
   }
 }
@@ -87,7 +72,28 @@ for($i=0; $i<count($supporting); $i++){
   echo $supporting[$i];
   echo " ";
 }
+
+
+//This $POST command grabs the array from the previous page, index.php and passes it to this one
+//It passes both the year long classes and the semester long classes
+array_shift($_POST);
+array_shift($_POST);
+$foundationCount = 0;
+echo json_encode($_POST);
+foreach($_POST as $c){
+  if($c==0){
+    
+  }
+}
+
+
+
 ?>
+
+
+
+
+
 <!--$required = $pathway['credits'][0];
 $credFoundation = $required['foundation'];
 $credSupporting = $required['supporting'];
