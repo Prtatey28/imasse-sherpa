@@ -136,8 +136,6 @@ $file2 = json_decode($file2, true);
 
 foreach($file2 as $yy){
 foreach($yy[0]['url'] as $zz){
-  echo ($zz);
-  echo (" ");
   
 //main issue at the moment. Can't seem to pass url from json to $feed variable below successfully
 
