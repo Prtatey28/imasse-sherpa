@@ -108,11 +108,9 @@ input[type=submit] {
 <!--This piece of the code is all about making everything show up on the website. This is typical HTML-->
 <!--Title Header-->
 <?php
-//array grabber adapted from: https://www.ravelrumba.com/blog/json-google-spreadsheets/
-$feed = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQrEPM2Hf88Xzq9_0NM-Oh0nU1raNVuAPfftDKNd5f2KNAwgSmOxl_20c9VsNINp1niQfzWdyNrRVlL/pub?output=csv';
-$keys = array();
-$newArray = array();
 
+
+//function for pulling classes from google sheet
 function csvToArray($file, $delimiter){
   if (($handle = fopen($file, 'r')) !== FALSE){
     $i = 0;
@@ -126,6 +124,31 @@ function csvToArray($file, $delimiter){
   }
   return $arr;
 }
+
+
+
+
+
+
+
+$file2 = file_get_contents("json/sheetUrls.json");
+$file2 = json_decode($file2, true);
+
+foreach($file2 as $yy){
+foreach($yy[0]['url'] as $zz){
+  echo ($zz);
+  echo (" ");
+  
+//main issue at the moment. Can't seem to pass url from json to $feed variable below successfully
+
+
+//array grabber adapted from: https://www.ravelrumba.com/blog/json-google-spreadsheets/
+
+$feed = $zz;
+$keys = array();
+$newArray = array();
+
+//function for csvToArray was moved above foreach loop
 
 // Do it
 $data = csvToArray($feed, ',');
@@ -156,10 +179,10 @@ for ($j = 0; $j < $count; $j++) {
  
 // Print it out as JSON
 //echo json_encode($newArray);
-
 // writeJson adapted from: https://stackoverflow.com/questions/57731341/how-to-push-a-new-object-into-a-json-file-using-php
-$writeJson = file_put_contents("json/A1-P1.json", json_encode($newArray));
-
+$writeJson = file_put_contents('json/'. $yy[0]['jsonName'] .'.json', json_encode($newArray));
+}
+}
 
 
 //new array grabber to grab all possible classes.
@@ -243,7 +266,7 @@ $writeJson = file_put_contents("json/allClasses.json", json_encode($newArray));
 //grabs the php array from above and uses it here for the possible classes search bar
 //echo part of code adapted from https://www.geeksforgeeks.org/how-to-pass-a-php-array-to-a-javascript-function/#
 var data2 = <?php echo json_encode($newArray);?>;
-console.log(data2);
+//console.log(data2);
 
 
 

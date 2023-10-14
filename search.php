@@ -205,7 +205,7 @@ foreach($semesterLong as $x ) {
 -->
     <div class="path1">
       <h2><?= $pathway['pathway'] ?>
-      <p>Pathway: <?php echo $pathwayName ?> </p>
+      <p style="color: blue;"><u><?php echo $pathwayName ?> </u></p>
       <p>Pathway Progress: <?= $percent ?> Completed</p>
       <p><i><mark>Foundation Classes: <?= $foundationPercent ?> Completed</mark></p>
       <p><mark>Supporting Classes: <?= $supportingPercent ?> Completed</mark></i></p>
@@ -278,14 +278,14 @@ h1 {
   font-size: 35px;
 }
 p {
-  text-align: left;
+  text-align: center;
   font-family: arial;
   font-size: 16px;
   color: black;
   text-indent: 25px;
 }
-p2 {
-  text-align: right;
+.p2 {
+  text-align: center;
   font-family: arial;
   font-size: 16px;
   color: black;
@@ -297,7 +297,7 @@ h2 {
   font-family: lato;
   font-size: 20px;
 }
-p3 {
+.p3 {
   text-align: left;
   font-family: arial;
   font-size: 16px;
