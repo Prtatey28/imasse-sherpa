@@ -76,8 +76,6 @@ for($i=0; $i<count($supporting); $i++){
 
 //This $POST command grabs the array from the previous page, index.php and passes it to this one
 //It passes both the year long classes and the semester long classes
-array_shift($_POST);
-array_shift($_POST);
 $completedClasses = array();
 $foundationClasses = array();
 $supportingClasses = array();

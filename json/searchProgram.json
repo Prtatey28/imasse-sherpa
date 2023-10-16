@@ -14,7 +14,7 @@
         "color": "#3fa046",
         "logo": "img/badges/2.png",
         "url": "https://sites.google.com/jeffcoschools.us/academyprogram/business-global-studies?authuser=0",
-        "id":[]
+        "id":["A1-P1", "A1-P2"]
         }
     ],
     "3":[
@@ -23,7 +23,7 @@
         "color": "#da252e",
         "logo": "img/badges/3.png",
         "url": "https://sites.google.com/jeffcoschools.us/academyprogram/health-human-services?authuser=0",
-        "id":[]
+        "id":["A1-P1", "A1-P2"]
         }
     ],
     "4":[
@@ -32,7 +32,7 @@
         "color": "#8c8b8e",
         "logo": "img/badges/4.png",
         "url": "https://sites.google.com/jeffcoschools.us/academyprogram/science-technology-engineering-math?authuser=0",
-        "id":[]
+        "id":["A1-P1", "A1-P2"]
         }
     ]
 }
