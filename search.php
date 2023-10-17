@@ -83,7 +83,9 @@ $pathwayName = " ";
 $foundationCount = 0.0;
 $supportingCount = 0.0;
 for($i=0; $i<count($_POST); $i++){
+  if ( !isset($_POST[$i]) ) continue;
   for($j=0; $j<count($pathway); $j++){
+    if ( !isset($pathway[$j]) ) continue;
     if($_POST[$i]==$pathway[$j][('classId')]){
       if($pathway[$j][('creditType')]==('f')){
         $foundationCount = $foundationCount + $pathway[$j][('credit')];
@@ -202,7 +204,7 @@ foreach($semesterLong as $x ) {
     ?>
 -->
     <div class="path1">
-      <h2><?= $pathway['pathway'] ?>
+      <h2>
       <p style="color: blue;"><u><?php echo $pathwayName ?> </u></p>
       <p>Pathway Progress: <?= $percent ?> Completed</p>
       <p><i><mark>Foundation Classes: <?= $foundationPercent ?> Completed</mark></p>
