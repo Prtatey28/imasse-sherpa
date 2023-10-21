@@ -125,9 +125,34 @@ if($supportingCount > $supportingMin){
 
 
 
+//iteration through list checking for 'b' flag and placing the class based in foundation or supporting
+//depending on whether or not foundation is full or not
+for($i=0; $i<count($_POST); $i++){
+  if ( !isset($_POST[$i]) ) continue;
+  for($j=0; $j<count($pathway); $j++){
+    if ( !isset($pathway[$j]) ) continue;
+    if($_POST[$i]==$pathway[$j][('classId')]){
+      if(($pathway[$j][('creditType')]==('b')) && (round(($foundationCount/$foundationMin)*100)<100)){
+        $foundationCount = $foundationCount + $pathway[$j][('credit')];
+        array_push($foundationClasses, $pathway[$j][('name')]);
+      }
+      else if(($pathway[$j][('creditType')]==('b')) && (round(($foundationCount/$foundationMin)*100)>=100)){
+        $supportingCount = $supportingCount + $pathway[$j][('credit')];
+        array_push($supportingClasses, $pathway[$j][('name')]);
+      }
+      array_push($completedClasses, $pathway[$j][('name')]);
+    }
+  }
+}
+
+
+
+
+
 $percent = round((($foundationCount + $supportingCount)/$totalPathway)*100)."%";
 $foundationPercent = round(($foundationCount/$foundationMin)*100)."%";
 $supportingPercent = round(($supportingCount/$supportingMin)*100)."%";
+
 
 
 ?>

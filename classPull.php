@@ -76,7 +76,7 @@ $writeJson = file_put_contents('json/'. $yy[0]['jsonName'] .'.json', json_encode
 
 //new array grabber to grab all possible classes.
 //array grabber adapted from: https://www.ravelrumba.com/blog/json-google-spreadsheets/
-$feed = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQowsFTPvKhT-1F2bg8yHsGZLWMW924YhMZbFrWOP-AdpEiXsx9ywsGYj6aDJhM57xDO8caEeflDzat/pub?output=csv';
+$feed = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQowsFTPvKhT-1F2bg8yHsGZLWMW924YhMZbFrWOP-AdpEiXsx9ywsGYj6aDJhM57xDO8caEeflDzat/pub?gid=0&single=true&output=csv';
 $keys = array();
 $newArray = array();
 
