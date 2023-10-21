@@ -115,6 +115,11 @@ input[type=submit] {
     <div class='logo'>
 <img src="img/Sherpa_Logo.png">
 </div>
+
+<p style="position: bottom; text-align:center; font-size:20px;"><b>Enter Classes Below and Press the Blue Search Button When You Are Ready to Continue</b></p>
+
+
+
 <!--This code is what is run when the search button is pressed. The search bar is turned off, and it sends you to the next webpage, search.php-->
 <form autocomplete="off" id="form" action="/search.php" method="post">
     <div class="autocomplete">
@@ -124,9 +129,11 @@ input[type=submit] {
   <input type="submit" value="Search" name="submit">
 </form>
 <!--This code determines where the title "Classes entered" is located below the search bar-->
-<p style="background-color:#fff;text-align:center">Classes Entered</p>
+<p style="background-color:#fff;text-align:center"><u>Classes Entered</u></p>
 <ul id="classes"></ul>
 </div>
+
+<p style="position: absolute; bottom: 1px; text-align:center; font-size:15px;"><u>Developed By: </u><br> Preston Tateyama <br> <u> In Combination With: </u><br> Luke Pisano & Zach Flower</p>
 
 <!--This is the JavaScript portion of the code. This is how the populating search bar works and and how selected classes are printed below-->
 <script>
