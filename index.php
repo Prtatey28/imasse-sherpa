@@ -7,7 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!--This is the "tab" name of the website. It will display in all of your tabs of your browser-->
-<head>
+<head> 
+  <link rel="icon" href="img/Sherpa_Logo2.png">
   <title>Sherpa - Pathway Home</title>
 </head>
 
@@ -21,8 +22,8 @@
 }
 /*CSS for whole website page*/
 body {
-  font: 16px Arial;  
-  background-color: #6e6b6a;
+  font: 16px Arial;
+  background-color: white;
 }
 /*This is the CSS for the live search box of the website*/
 /*the container must be positioned relative:*/
@@ -100,21 +101,19 @@ input[type=submit] {
     text-align: center;
 }
 .logo img {
-    width: 300px;
+    width: 400px;
 }
 </style>
 <!--This is the end of the CSS portion of the Code -->
 
 <!--This piece of the code is all about making everything show up on the website. This is typical HTML-->
 <!--Title Header-->
-<h1>
-<p style="text-align:center"> WELCOME TO SHERPA!</p>
-</h1>
+
 
 <!--This piece of the code places all of the elements on the website, based on their CSS location, size, and color-->
 <div class="container">
     <div class='logo'>
-<img src="img/sherpa-logo.svg">
+<img src="img/Sherpa_Logo.png">
 </div>
 <!--This code is what is run when the search button is pressed. The search bar is turned off, and it sends you to the next webpage, search.php-->
 <form autocomplete="off" id="form" action="/search.php" method="post">
