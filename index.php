@@ -133,7 +133,7 @@ input[type=submit] {
 <ul id="classes"></ul>
 </div>
 
-<p style="position: absolute; bottom: 1px; text-align:center; font-size:15px;"><u>Developed By: </u><br> Preston Tateyama <br> <u> In Combination With: </u><br> Luke Pisano & Zach Flower</p>
+<p style="position: absolute; bottom: 1px; text-align:center; font-size:15px;"><u>Developed By: </u><br> Preston Tateyama <br> <u> In Collaboration With: </u><br> Luke Pisano & Zach Flower</p>
 
 <!--This is the JavaScript portion of the code. This is how the populating search bar works and and how selected classes are printed below-->
 <script>
