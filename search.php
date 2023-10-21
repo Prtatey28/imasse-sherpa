@@ -14,6 +14,7 @@ $file = json_decode($file, true);
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <head>
+  <link rel="icon" href="img/Sherpa_Logo2.png">
   <title>Sherpa - Pathway Search</title>
 </head>
 
