@@ -24,7 +24,7 @@ $file = json_decode($file, true);
 foreach($file as $y){
     ?>
     
-      <div style="background-color:<?= $y[0]['color'] ?> " class="header"><a href="<?= $y[0]['url'] ?>"><img class="badge" src="<?= $y[0]['logo'] ?>"></a>
+      <div style="background-color:<?= $y[0]['color'] ?> " class="header"><a href="<?= $y[0]['url'] ?> " target="_blank"><img class="badge" src="<?= $y[0]['logo'] ?>"></a>
     <h3><?= $y[0]['name'] ?></h3>
   </div>
   <div class="grid-container">

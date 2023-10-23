@@ -116,7 +116,7 @@ input[type=submit] {
 <img src="img/Sherpa_Logo.png">
 </div>
 
-<p style="position: bottom; text-align:center; font-size:20px;"><b>Enter Classes Below and Press the Blue Search Button When You Are Ready to Continue</b></p>
+<p style="position: bottom; text-align:center; font-size:20px;"><b>Enter Your Classes Below and Press the Blue Search Button When You Are Ready to Continue</b></p>
 
 
 
