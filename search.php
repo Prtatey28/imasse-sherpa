@@ -18,6 +18,7 @@ $file = json_decode($file, true);
   <title>Sherpa - Pathway Search</title>
 </head>
 
+<a href="javascript:history.back()"><img class="badge2" src="img/Sherpa_Logo2.png" ></a>
 <body style="display: none">
   <?php
 foreach($file as $y){
@@ -276,6 +277,13 @@ foreach($semesterLong as $x ) {
     max-width: 15%;
     height: auto;
     width: auto;
+}
+.badge2 {
+    max-width: 8%;
+    height: auto;
+    width: auto;
+    vertical-align: top;
+    position: absolute; left: 1px;
 }
 .header {
   padding: 10px;
