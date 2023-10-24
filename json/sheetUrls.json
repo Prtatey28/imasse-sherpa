@@ -22,5 +22,17 @@
         "url":["https://docs.google.com/spreadsheets/d/e/2PACX-1vQowsFTPvKhT-1F2bg8yHsGZLWMW924YhMZbFrWOP-AdpEiXsx9ywsGYj6aDJhM57xDO8caEeflDzat/pub?gid=1159235183&single=true&output=csv"],
         "jsonName":"A1-P4"
         }
+    ],
+    "5":[
+        {
+        "url":["https://docs.google.com/spreadsheets/d/e/2PACX-1vQowsFTPvKhT-1F2bg8yHsGZLWMW924YhMZbFrWOP-AdpEiXsx9ywsGYj6aDJhM57xDO8caEeflDzat/pub?gid=1166374911&single=true&output=csv"],
+        "jsonName":"A2-P1"
+        }
+    ],
+    "6":[
+        {
+        "url":["https://docs.google.com/spreadsheets/d/e/2PACX-1vQowsFTPvKhT-1F2bg8yHsGZLWMW924YhMZbFrWOP-AdpEiXsx9ywsGYj6aDJhM57xDO8caEeflDzat/pub?gid=578179242&single=true&output=csv"],
+        "jsonName":"A2-P2"
+        }
     ]
 }
