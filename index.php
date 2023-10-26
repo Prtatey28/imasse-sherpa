@@ -133,7 +133,7 @@ input[type=submit] {
 <ul id="classes"></ul>
 </div>
 
-<p style="position: center; text-align:center; font-size:15px;"><u><b>Questions? </u></b><br> Visit the <a href='https://docs.google.com/document/d/1Sb5T9UpqaVv87lefkwTaRzjJZBBoecEDOivG_zqZh9k/edit?usp=sharing' target="_blank">Wiki</p>
+<p style="text-align:center; font-size:15px;"><u><b>Questions? </u></b><br> Visit the <a href='https://docs.google.com/document/d/1Sb5T9UpqaVv87lefkwTaRzjJZBBoecEDOivG_zqZh9k/edit?usp=sharing' target="_blank">Wiki</p>
 
 <!--This is the JavaScript portion of the code. This is how the populating search bar works and and how selected classes are printed below-->
 <script>
