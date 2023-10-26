@@ -18,7 +18,7 @@ $file = json_decode($file, true);
   <title>Sherpa - Pathway Search</title>
 </head>
 
-<a href="javascript:history.back()"><img class="badge2" src="img/Sherpa_Logo2.png" ></a>
+<a href="https://gmhspathwayprecheck.fly.dev/"><img class="badge2" src="img/Sherpa_Logo2.png" ></a>
 <body style="display: none">
   <?php
 foreach($file as $y){
