@@ -23,7 +23,7 @@
         "color": "#da252e",
         "logo": "img/badges/3.png",
         "url": "https://sites.google.com/jeffcoschools.us/academyprogram/health-human-services?authuser=0",
-        "id":[]
+        "id":["A3-P1","A3-P2","A3-P3"]
         }
     ],
     "4":[
@@ -32,7 +32,7 @@
         "color": "#8c8b8e",
         "logo": "img/badges/4.png",
         "url": "https://sites.google.com/jeffcoschools.us/academyprogram/science-technology-engineering-math?authuser=0",
-        "id":[]
+        "id":["A4-P1","A4-P2","A4-P3"]
         }
     ]
 }
