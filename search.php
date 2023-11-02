@@ -75,6 +75,7 @@ $supportingClasses = array();
 $pathwayName = " ";
 $foundationCount = 0.0;
 $supportingCount = 0.0;
+
 for($i=0; $i<count($_POST); $i++){
   if ( !isset($_POST[$i]) ) continue;
   for($j=0; $j<count($pathway); $j++){
