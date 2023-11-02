@@ -66,15 +66,6 @@ for($i=0; $i<count($pathway); $i++){
     }
   }
 }
-/*for($i=0; $i<count($foundation); $i++){
-  echo $foundation[$i];
-  echo " ";
-}
-for($i=0; $i<count($supporting); $i++){
-  echo $supporting[$i];
-  echo " ";
-}*/
-
 
 //This $POST command grabs the array from the previous page, index.php and passes it to this one
 //It passes both the year long classes and the semester long classes
@@ -110,10 +101,6 @@ for($j=0; $j<count($pathway); $j++){
     $pathwayName = $pathway[$j][('name')];
   }
 }
-/*echo ("Foundation Credits: $foundationCount");
-echo ("_________");
-echo ("Supporting Credits: $supportingCount");*/
-
 
 //calculating total percentage completion of pathway
 $totalPathway = $foundationMin + $supportingMin;
@@ -148,88 +135,12 @@ for($i=0; $i<count($_POST); $i++){
 }
 
 
-
-
-
 $percent = round((($foundationCount + $supportingCount)/$totalPathway)*100)."%";
 $foundationPercent = round(($foundationCount/$foundationMin)*100)."%";
 $supportingPercent = round(($supportingCount/$supportingMin)*100)."%";
 
-
-
 ?>
 
-
-
-
-
-<!--$required = $pathway['credits'][0];
-$credFoundation = $required['foundation'];
-$credSupporting = $required['supporting'];
-
-$completedClasses = array();
-
-// foundation 
-foreach($yearLong as $x ) {
-    if(isset($foundation[$x])){
-        array_push($completedClasses, $foundation[$x][0]['name']);
-        unset($foundation[$x]);
-        $credFoundation = $credFoundation - 1;
-    }
-}
-foreach($semesterLong as $x ) {
-    if(isset($foundation[$x])){
-        array_push($completedClasses, $foundation[$x][0]['name']);
-        unset($foundation[$x]);
-        $credFoundation = $credFoundation - 0.5;
-    }
-}
-// supporting
-foreach($yearLong as $x ) {
-    if(isset($supporting[$x])){
-        array_push($completedClasses, $supporting[$x][0]['name']);
-        unset($supporting[$x]);
-        $credSupporting = $credSupporting - 1;
-    }
-}
-foreach($semesterLong as $x ) {
-    if(isset($supporting[$x])){
-        array_push($completedClasses, $supporting[$x][0]['name']);
-        unset($supporting[$x]);
-        $credSupporting = $credSupporting - 0.5;
-    }
-}
-
-// both
-foreach($yearLong as $x ) {
-    if(isset($both[$x])){
-        array_push($completedClasses, $both[$x][0]['name']);
-        unset($both[$x]);
-        if($credSupporting > $credFoundation){
-            $credSupporting = $credSupporting - 1;
-        }
-        else {
-            $credFoundation = $credFoundation - 1;
-        }
-    }
-}
-foreach($semesterLong as $x ) {
-    if(isset($both[$x])){
-        array_push($completedClasses, $both[$x][0]['name']);
-        unset($both[$x]);
-        if($credSupporting > $credFoundation){
-            $credSupporting = $credSupporting - 0.5;
-        }
-        else {
-            $credFoundation = $credFoundation - 0.5;
-        }
-    }
-}
-    $credFoundation = max($credFoundation, 0);
-    $credSupporting = max($credSupporting, 0);
-  $percent = round(100*(1-(($credFoundation + $credSupporting)/($required['foundation'] + $required['supporting'])))) . '%';
-    ?>
--->
     <div class="path1">
       <h2>
       <p style="color: blue;"><u><?php echo $pathwayName ?> </u></p>
