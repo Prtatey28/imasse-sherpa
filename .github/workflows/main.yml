@@ -4,6 +4,12 @@ on:
     branches:
       - main
 jobs:
+  build:
+    name: Build Assets
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: php classPull.php
   deploy:
     name: Deploy app
     runs-on: ubuntu-latest
