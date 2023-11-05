@@ -4,17 +4,15 @@ on:
     branches:
       - main
 jobs:
-  build:
-    name: Build Assets
+  build_and_deploy:
+    name: Build and Deploy app
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - run: php classPull.php
-  deploy:
-    name: Deploy app
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+      - uses: EndBug/add-and-commit@v9 
+        with:
+          add: 'json'
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - run: flyctl deploy --remote-only --ha=false
         env:
