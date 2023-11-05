@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - main
+  schedule:
+    - cron:  '0 1 * * 0'
+    
 jobs:
   build_and_deploy:
     name: Build and Deploy app
