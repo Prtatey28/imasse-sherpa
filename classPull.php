@@ -27,47 +27,31 @@ $file2 = json_decode($file2, true);
 
 foreach($file2 as $yy){
 foreach($yy[0]['url'] as $zz){
-  
-//main issue at the moment. Can't seem to pass url from json to $feed variable below successfully
-
-
 //array grabber adapted from: https://www.ravelrumba.com/blog/json-google-spreadsheets/
-
 $feed = $zz;
 $keys = array();
 $newArray = array();
-
-//function for csvToArray was moved above foreach loop
-
 // Do it
 $data = csvToArray($feed, ',');
- 
 // Set number of elements (minus 1 because we shift off the first row)
 $count = count($data) - 1;
- 
 //Use first row for names  
 $labels = array_shift($data);  
- 
 foreach ($labels as $label) {
   $keys[] = $label;
 }
- 
 // Add Ids, just in case we want them later
 $keys[] = 'id';
- 
 for ($i = 0; $i < $count; $i++) {
   $data[$i][] = $i;
 }
- 
 // Bring it all together
 for ($j = 0; $j < $count; $j++) {
   $d = array_combine($keys, $data[$j]);
   
   $newArray[$j] = $d;
 }
- 
 // Print it out as JSON
-//echo json_encode($newArray);
 // writeJson adapted from: https://stackoverflow.com/questions/57731341/how-to-push-a-new-object-into-a-json-file-using-php
 $writeJson = file_put_contents('json/'. $yy[0]['jsonName'] .'.json', json_encode($newArray));
 }

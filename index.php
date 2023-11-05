@@ -116,7 +116,7 @@ input[type=submit] {
 <img src="img/Sherpa_Logo.png">
 </div>
 
-<p style="position: bottom; text-align:center; font-size:20px;"><b>Enter Your Classes Below and Press the Blue Search Button When You Are Ready to Continue</b></p>
+<p style="position: bottom; text-align:center; font-size:20px;"><b>Enter Your Classes Below and Press the Blue "Check" Button When You Are Ready to Continue</b></p>
 
 
 
@@ -126,7 +126,7 @@ input[type=submit] {
   <!--This code is used to define what's inside the search bar-->
   <input id="input" type="text" placeholder="Start Typing Class Name" name="input">
   </div>
-  <input type="submit" value="Search" name="submit">
+  <input type="submit" value="Check" name="submit">
 </form>
 <!--This code determines where the title "Classes entered" is located below the search bar-->
 <p style="background-color:#fff;text-align:center"><u>Classes Entered</u></p>
