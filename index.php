@@ -170,16 +170,18 @@ function autocomplete(inp, arr) {
       var a, b, i, val = this.value;
       closeAllLists();
       if (!val) { return false;}
+
       currentFocus = -1;
       a = document.createElement("DIV");
       a.setAttribute("id", this.id + "autocomplete-list");
       a.setAttribute("class", "autocomplete-items");
       this.parentNode.appendChild(a);
       for (i = 0; i < arr.length; i++) {
-        if (arr[i]['name'].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+        let matcher = new RegExp(escapeRegex(val), 'i');
+
+        if (arr[i]['name'].match(matcher)) {
           b = document.createElement("DIV");
-          b.innerHTML = "<strong>" + arr[i]['name'].substr(0, val.length) + "</strong>";
-          b.innerHTML += arr[i]['name'].substr(val.length);
+          b.innerHTML = arr[i]['name'].replace(matcher, "<strong>$&</strong>");
           b.innerHTML += "<input type='hidden' alt='"+ arr[i]['name'] +"' value='" + arr[i]['id'] + "'>";
           b.addEventListener("click", function(e) {
               inp.value = this.getElementsByTagName("input")[0].value;
@@ -210,6 +212,7 @@ function autocomplete(inp, arr) {
         }
       }
   });
+
   function addActive(x) {
     if (!x) return false;
     removeActive(x);
@@ -217,11 +220,13 @@ function autocomplete(inp, arr) {
     if (currentFocus < 0) currentFocus = (x.length - 1);
     x[currentFocus].classList.add("autocomplete-active");
   }
+
   function removeActive(x) {
     for (var i = 0; i < x.length; i++) {
       x[i].classList.remove("autocomplete-active");
     }
   }
+
   function closeAllLists(elmnt) {
     var x = document.getElementsByClassName("autocomplete-items");
     for (var i = 0; i < x.length; i++) {
@@ -230,6 +235,11 @@ function autocomplete(inp, arr) {
       }
     }
   }
+
+  function escapeRegex(string) {
+    return string.replace(/[/\-\\^$*+?.()|[\]{}]/g, '\\$&');
+  }
+
   document.addEventListener("click", function (e) {
       closeAllLists(e.target);
   });
