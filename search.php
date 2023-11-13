@@ -154,13 +154,16 @@ $supportingPercent = round(($supportingCount / $supportingMin) * 100) . "%";
           }
 
           for ($i = 0; $i < count($_POST); $i++) {
+            if (!isset($_POST[$i])) continue;
             for ($j = 0; $j < count($recommendedFClasses); $j++) {
+              if (!isset($recommendedFClasses[$j])) continue;
               if ($_POST[$i] == $recommendedFClasses[$j]) {
                 unset($recommendedFClasses[$j]);
                 $recommendedFClasses = array_values($recommendedFClasses);
               }
             }
             for ($j = 0; $j < count($recommendedSClasses); $j++) {
+              if (!isset($recommendedSClasses[$j])) continue;
               if ($_POST[$i] == $recommendedSClasses[$j]){
                 unset($recommendedSClasses[$j]);
                 $recommendedSClasses = array_values($recommendedSClasses);
