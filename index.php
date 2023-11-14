@@ -104,7 +104,7 @@
       <img src="img/Sherpa_Logo.png">
     </div>
     <p style="position: bottom; text-align:center; font-size:20px;"><b>Enter Your Classes Below and Press the Blue "Check" Button When You Are Ready to Continue</b></p>
-    <p style="position: bottom; text-align:center; font-size:20px;"><mark><b>NOTE:</b> If you don't see a class listed when you enter it into the search bar, it's not currently part of a pathway. Skip it!</mark></p>
+    <p style="position: bottom; text-align:center; font-size:20px;"><mark><b>NOTE:</b> If you don't see a class listed when you enter it into the search bar, don't worry! It's not currently a part of a pathway, so skip it!</mark></p>
     <!--This code is what is run when the search button is pressed. The search bar is turned off, and it sends you to the next webpage, search.php-->
     <form autocomplete="off" id="form" action="/search.php" method="post">
       <div class="autocomplete">
