@@ -108,7 +108,8 @@ $file = json_decode($file, true);
         //calculating percentages for each pathway
         $percent = round((($foundationCount + $supportingCount) / $totalPathway) * 100) . "%";
         $foundationPercent = round(($foundationCount / $foundationMin) * 100) . "%";
-        $supportingPercent = round(($supportingCount / $supportingMin) * 100) . "%";        //recommended classes checking through classIds
+        $supportingPercent = round(($supportingCount / $supportingMin) * 100) . "%";        
+        //recommended classes checking through classIds
         for ($j = 0; $j < count($pathway); $j++) {
           if (!isset($pathway[$j])) continue;
           if ($pathway[$j][('creditType')] == ('f')) {
