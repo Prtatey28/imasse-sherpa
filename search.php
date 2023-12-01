@@ -14,8 +14,8 @@ $file = json_decode($file, true);
   <?php
   foreach ($file as $y) {
   ?>
-    <div style="background-color:<?= $y[0]['color'] ?> " class="header"><a href="<?= $y[0]['url'] ?> " target="_blank"><img class="badge" src="<?= $y[0]['logo'] ?>"></a>
-      <h3><?= $y[0]['name'] ?></h3>
+    <div style="background-color:<?= $y[0]['color'] ?> " class="header"><a href="<?= $y[0]['url'] ?> " target="_blank"><img class="badge" style = "border-radius: 50%; border: 5px solid black" src="<?= $y[0]['logo'] ?>"></a>
+    <h3><?= $y[0]['name'] ?></h3>
     </div>
     <div class="grid-container">
       <?php
@@ -223,7 +223,7 @@ $file = json_decode($file, true);
 </html>
 <style>
   .badge {
-    max-width: 15%;
+    max-width: 20%;
     height: auto;
     width: auto;
   }
@@ -234,6 +234,7 @@ $file = json_decode($file, true);
     vertical-align: top;
     position: absolute;
     left: 1px;
+    border: 5px solid black;
   }
   .header {
     padding: 10px;
@@ -241,11 +242,12 @@ $file = json_decode($file, true);
     border-radius: 360px;
     margin-top: 10px;
   }
-  .header h3 {
+  h3 {
     flex-grow: 1;
-    text-align: right;
+    font-size: 25px;
+    text-align: center;
     color: white;
-    padding: 16px;
+    padding: 25px;
   }
   body {
     background-color: white;
