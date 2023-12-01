@@ -234,7 +234,6 @@ $file = json_decode($file, true);
     vertical-align: top;
     position: absolute;
     left: 1px;
-    border: 5px solid black;
   }
   .header {
     padding: 10px;
