@@ -99,12 +99,13 @@
   <!--This piece of the code is all about making everything show up on the website. This is typical HTML-->
   <!--Title Header-->
   <!--This piece of the code places all of the elements on the website, based on their CSS location, size, and color-->
+  <p style="position: bottom; text-align:center; font-size:30px;"><mark><b>NOTE:</b> If you don't see a class listed when you enter it into the search bar, don't worry! It's not currently a part of a pathway, so skip it!</mark></p>
   <div class="container">
     <div class='logo'>
       <img src="img/Sherpa_Logo.png">
     </div>
     <p style="position: bottom; text-align:center; font-size:20px;"><b>Enter Your Classes Below and Press the Blue "Check" Button When You Are Ready to Continue</b></p>
-    <p style="position: bottom; text-align:center; font-size:20px;"><mark><b>NOTE:</b> If you don't see a class listed when you enter it into the search bar, don't worry! It's not currently a part of a pathway, so skip it!</mark></p>
+    
     <!--This code is what is run when the search button is pressed. The search bar is turned off, and it sends you to the next webpage, search.php-->
     <form autocomplete="off" id="form" action="/search.php" method="post">
       <div class="autocomplete">

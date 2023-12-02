@@ -1,38 +1,55 @@
 {
-    "1":[
+    "1": [
         {
-        "name":"Arts, Humanities, & Performing Arts Academy",
-        "color": "#007cba",
-        "logo": "img/badges/1.png",
-        "url": "https://sites.google.com/jeffcoschools.us/academyprogram/arts-humanities-performing-arts?authuser=0",
-        "id":["A1-P1", "A1-P2", "A1-P3", "A1-P4"]
+            "name": "Arts, Humanities, & Performing Arts Academy",
+            "color": "#007cba",
+            "logo": "img/badges/1.png",
+            "url": "https://sites.google.com/jeffcoschools.us/academyprogram/arts-humanities-performing-arts?authuser=0",
+            "id": [
+                "A1-P1",
+                "A1-P2",
+                "A1-P3",
+                "A1-P4"
+            ]
         }
     ],
-    "2":[
+    "2": [
         {
-        "name":"Business & Global Studies Academy",
-        "color": "#3fa046",
-        "logo": "img/badges/2.png",
-        "url": "https://sites.google.com/jeffcoschools.us/academyprogram/business-global-studies?authuser=0",
-        "id":["A2-P1","A2-P2","A2-P3"]
+            "name": "Business & Global Studies Academy",
+            "color": "#3fa046",
+            "logo": "img/badges/2.png",
+            "url": "https://sites.google.com/jeffcoschools.us/academyprogram/business-global-studies?authuser=0",
+            "id": [
+                "A2-P1",
+                "A2-P2",
+                "A2-P3"
+            ]
         }
     ],
-    "3":[
+    "3": [
         {
-        "name":"Health & Human Services Academy",
-        "color": "#da252e",
-        "logo": "img/badges/3.png",
-        "url": "https://sites.google.com/jeffcoschools.us/academyprogram/health-human-services?authuser=0",
-        "id":["A3-P1","A3-P2","A3-P3"]
+            "name": "Health & Human Services Academy",
+            "color": "#da252e",
+            "logo": "img/badges/3.png",
+            "url": "https://sites.google.com/jeffcoschools.us/academyprogram/health-human-services?authuser=0",
+            "id": [
+                "A3-P1",
+                "A3-P2",
+                "A3-P3"
+            ]
         }
     ],
-    "4":[
+    "4": [
         {
-        "name":"Science, Technology, Engeineering & Mathematics (STEM) Academy",
-        "color": "#8c8b8e",
-        "logo": "img/badges/4.png",
-        "url": "https://sites.google.com/jeffcoschools.us/academyprogram/science-technology-engineering-math?authuser=0",
-        "id":["A4-P1","A4-P2","A4-P3"]
+            "name": "Science, Technology, Engeineering & Mathematics (STEM) Academy",
+            "color": "#8c8b8e",
+            "logo": "img/badges/4.png",
+            "url": "https://sites.google.com/jeffcoschools.us/academyprogram/science-technology-engineering-math?authuser=0",
+            "id": [
+                "A4-P1",
+                "A4-P2",
+                "A4-P3"
+            ]
         }
     ]
 }
