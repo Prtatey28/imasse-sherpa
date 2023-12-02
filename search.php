@@ -363,7 +363,7 @@ $file = json_decode($file, true);
 </html>
 <style>
   .badge {
-    max-width: 20%;
+    max-width: 25%;
     height: auto;
     width: auto;
   }
