@@ -288,7 +288,7 @@ $file = json_decode($file, true);
         }
         //calculating percentages for each pathway
         $foundationPercent = round(($foundationCount / $foundationMin) * 100) . "%";
-        $percentageCheck = $percentageCheck + $foundationPercent;
+        $percentageCheck = $percentageCheck + ($foundationCount / $foundationMin);
         //recommended classes checking through classIds
         for ($j = 0; $j < count($pathway); $j++) {
           if (!isset($pathway[$j])) continue;
