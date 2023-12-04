@@ -23,9 +23,8 @@ $file = json_decode($file, true);
       <?php
       $allClasses = file_get_contents('json/allClasses.json');
       $allClasses = json_decode($allClasses, true);
-
+      $percentCheck = false;
       foreach ($y[0]['id'] as $z) {
-
         $pathway = file_get_contents("json/" . $z . ".json");
         $pathway = json_decode($pathway, true);
         //array of foundation classes possible for this pathway
@@ -113,6 +112,11 @@ $file = json_decode($file, true);
         $percent = round((($foundationCount + $supportingCount) / $totalPathway) * 100) . "%";
         $foundationPercent = round(($foundationCount / $foundationMin) * 100) . "%";
         $supportingPercent = round(($supportingCount / $supportingMin) * 100) . "%";
+
+        if ($percent>100){
+          $percentCheck = true;
+        }
+
         //recommended classes checking through classIds
         for ($j = 0; $j < count($pathway); $j++) {
           if (!isset($pathway[$j])) continue;
@@ -230,8 +234,18 @@ $file = json_decode($file, true);
     $checkPrint = "Not Completed";
     $checkColor = "#bf2121";
   }
+  if ($percentCheck == true){
+    $checkPrint2 = "YES";
+    $checkColor2 = "#04A731";
+  }
+  if ($percentCheck == false){
+    $checkPrint2 = "NO";
+    $checkColor2 = "#bf2121";
+  }
   foreach ($file as $y) {
   ?>
+    <h4><mark> Do I Qualify for IDS? </mark><h4 style="color: <?= $checkColor2?>" ><b> <?php echo $checkPrint2?> </b>  </h4>
+    <h4><mark> NOTE: While it may say you've completed IDS below, you, yourself, still need to verify the requirement above certain Academies to ensure that you still qualify! </mark></h4>
     <div style="background-color:<?= $y[0]['color'] ?> " class="header"><a href="<?= $y[0]['url'] ?> " target="_blank"><img class="badge" style="border-radius: 50%; border: 5px solid black" src="<?= $y[0]['logo'] ?>"></a>
       <h3><?= $y[0]['name'] ?> </h3><h4 style = "color: <?= $checkColor ?> ">(<?= $checkPrint ?>)</h4>
     </div>
@@ -393,7 +407,6 @@ $file = json_decode($file, true);
     flex-grow: 1;
     font-size: 25px;
     text-align: center;
-    padding: 25px;
   }
 
   body {
