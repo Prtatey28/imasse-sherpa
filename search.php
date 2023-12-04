@@ -14,6 +14,7 @@ $file = json_decode($file, true);
 
 <body style="display: none">
   <?php
+  $percentCheck = false;
   foreach ($file as $y) {
   ?>
     <div style="background-color:<?= $y[0]['color'] ?> " class="header"><a href="<?= $y[0]['url'] ?> " target="_blank"><img class="badge" style="border-radius: 50%; border: 5px solid black" src="<?= $y[0]['logo'] ?>"></a>
@@ -23,7 +24,6 @@ $file = json_decode($file, true);
       <?php
       $allClasses = file_get_contents('json/allClasses.json');
       $allClasses = json_decode($allClasses, true);
-      $percentCheck = false;
       foreach ($y[0]['id'] as $z) {
         $pathway = file_get_contents("json/" . $z . ".json");
         $pathway = json_decode($pathway, true);
@@ -83,14 +83,7 @@ $file = json_decode($file, true);
             }
           }
         }
-        //calculating total percentage completion of pathway
-        $totalPathway = $foundationMin + $supportingMin;
-        if ($foundationCount > $foundationMin) {
-          $foundationCount = $foundationMin;
-        }
-        if ($supportingCount > $supportingMin) {
-          $supportingCount = $supportingMin;
-        }
+        
         //iteration through list checking for 'b' flag and placing the class based in foundation or supporting
         //depending on whether or not foundation is full or not
         for ($i = 0; $i < count($_POST); $i++) {
@@ -108,12 +101,20 @@ $file = json_decode($file, true);
             }
           }
         }
+        //calculating total percentage completion of pathway
+        $totalPathway = $foundationMin + $supportingMin;
+        if ($foundationCount > $foundationMin) {
+          $foundationCount = $foundationMin;
+        }
+        if ($supportingCount > $supportingMin) {
+          $supportingCount = $supportingMin;
+        }
         //calculating percentages for each pathway
         $percent = round((($foundationCount + $supportingCount) / $totalPathway) * 100) . "%";
         $foundationPercent = round(($foundationCount / $foundationMin) * 100) . "%";
         $supportingPercent = round(($supportingCount / $supportingMin) * 100) . "%";
 
-        if ($percent>100){
+        if (round((($foundationCount + $supportingCount) / $totalPathway) * 100)>=100){
           $percentCheck = true;
         }
 
@@ -234,11 +235,11 @@ $file = json_decode($file, true);
     $checkPrint = "Not Completed";
     $checkColor = "#bf2121";
   }
-  if ($percentCheck == true){
+  if ($percentCheck == false){
     $checkPrint2 = "YES";
     $checkColor2 = "#04A731";
   }
-  if ($percentCheck == false){
+  if ($percentCheck == true){
     $checkPrint2 = "NO";
     $checkColor2 = "#bf2121";
   }
