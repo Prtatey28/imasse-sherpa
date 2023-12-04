@@ -107,7 +107,7 @@
   <p style="position: bottom; text-align:center; font-size:30px;"><mark><b>NOTE:</b> If you don't see a class listed when you enter it into the search bar, don't worry! It's not currently a part of a pathway, so skip it!</mark></p>
   <div class="container">
     <div class='logo'>
-      <img src="img/Sherpa_Logo.png">
+      <a href="https://sites.google.com/jeffcoschools.us/prestontateyama-pathwaypre-che/home" target="_blank"><img src="img/Sherpa_Logo.png"></a>
     </div>
     <p style="position: bottom; text-align:center; font-size:20px;"><b>Enter Your Classes Below and Press the Blue "Check" Button When You Are Ready to Continue</b></p>
     
