@@ -116,16 +116,10 @@ $file = json_decode($file, true);
         //recommended classes checking through classIds
         for ($j = 0; $j < count($pathway); $j++) {
           if (!isset($pathway[$j])) continue;
-          if ($pathway[$j][('creditType')] == ('f')) {
+          if ($pathway[$j][('creditType')] == ('b')) {
             array_push($recommendedFClasses, $pathway[$j][('classId')]);
           }
           if ($pathway[$j][('creditType')] == ('s')) {
-            array_push($recommendedSClasses, $pathway[$j][('classId')]);
-          }
-          if (($pathway[$j][('creditType')] == ('b')) && (round(($foundationCount / $foundationMin) * 100) < 100)) {
-            array_push($recommendedSClasses, $pathway[$j][('classId')]);
-          }
-          if (($pathway[$j][('creditType')] == ('b')) && (round(($foundationCount / $foundationMin) * 100) >= 100)) {
             array_push($recommendedSClasses, $pathway[$j][('classId')]);
           }
         }
