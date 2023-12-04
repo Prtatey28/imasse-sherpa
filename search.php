@@ -247,6 +247,7 @@ $file = json_decode($file, true);
         $foundation = array();
         //minimum number of credits needed for foundation in this pathway
         $foundationMin = 0.0;
+        $partText = "";
         for ($i = 0; $i < count($pathway); $i++) {
           for ($j = 0; $j < 1; $j++) {
             if ($pathway[$i]['creditType'] == 'f') {
@@ -254,6 +255,9 @@ $file = json_decode($file, true);
             }
             if ($pathway[$i]['creditType'] == 'F#') {
               $foundationMin = floatval($pathway[$i][('credit')]);
+            }
+            if ($pathway[$i]['creditType'] == 'r') {
+              $partText = $pathway[$i][('name')];
             }
           }
         }
@@ -322,7 +326,7 @@ $file = json_decode($file, true);
             <p style="color: blue;"><u><?php echo $pathwayName ?> </u></p>
 
             <p><i><mark>Classes: <?= $foundationPercent ?> Completed</mark></p>
-            <p><mark>Coming Soon!</mark></i></p>
+            <p><mark> <?php echo $partText ?> </mark></i></p>
           </h2>
           <ul>
             <p2><i><u>Completed Classes (Listed Below):</i></u></p2>
