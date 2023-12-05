@@ -178,7 +178,7 @@ $file = json_decode($file, true);
             <p><mark>Supporting Classes: <?= $supportingPercent ?> Completed</mark></i></p>
           </h2>
           <ul>
-            <p2><i><u>Completed Foundation Classes (Listed Below):</i></u></p2>
+            <p2><i><u>Completed Foundation Classes (Listed Below): <?= $foundationCount ?> credits / <?= $foundationMin ?> credits</i></u></p2>
             <p><?php
                 foreach ($foundationClasses as $x) {
                   echo '<li>' . $x . '</li>';
@@ -196,7 +196,7 @@ $file = json_decode($file, true);
               </p>
             </details>
             </p>
-            <p2><i><u>Completed Supporting Classes (Listed Below):</i></u></p2>
+            <p2><i><u>Completed Supporting Classes (Listed Below): <?= $supportingCount ?> credits / <?= $supportingMin ?> credits</i></u></p2>
             <p><?php
                 foreach ($supportingClasses as $x) {
                   echo '<li>' . $x . '</li>';
@@ -344,7 +344,7 @@ $file = json_decode($file, true);
             <p><mark> <?php echo $partText ?> </mark></i></p>
           </h2>
           <ul>
-            <p2><i><u>Completed Classes (Listed Below):</i></u></p2>
+            <p2><i><u>Completed Classes (Listed Below): <?= $foundationCount ?> credits / <?= $foundationMin ?> credits</i></u></p2>
             <p><?php
                 foreach ($foundationClasses as $x) {
                   echo '<li>' . $x . '</li>';
