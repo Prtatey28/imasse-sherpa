@@ -104,7 +104,7 @@
   <!--Title Header-->
   <!--This piece of the code places all of the elements on the website, based on their CSS location, size, and color-->
   <h1> Welcome to the: Super Helpful Easily Readable Pathway Assistant! </h1>
-  <p style="position: bottom; text-align:center; font-size:30px;"><mark><b>NOTE:</b> If you don't see a class listed when you enter it into the search bar, don't worry! It's not currently a part of a pathway, so skip it!</mark></p>
+  <p style="position: bottom; text-align:center; font-size:30px;"><mark><b>NOTE:</b> If you don't see a class listed when you enter it into the search bar, please email prtatey28@gmail.com!</mark></p>
   <div class="container">
     <div class='logo'>
       <a href="https://sites.google.com/jeffcoschools.us/prestontateyama-pathwaypre-che/home" target="_blank"><img src="img/Sherpa_Logo.png"></a>
