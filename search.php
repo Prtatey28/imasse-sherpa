@@ -10,7 +10,7 @@ $file = json_decode($file, true);
   <link rel="icon" href="img/Sherpa_Logo2.png">
   <title>Sherpa - Pathway Search</title>
 </head>
-<a href="https://gmhspathwayprecheck.fly.dev/"><img class="badge2" src="img/Sherpa_Logo2.png"></a>
+<a onClick=history.back()><img class="badge2" src="img/Sherpa_Logo2.png"></a>
 
 <body style="display: none">
   <?php
