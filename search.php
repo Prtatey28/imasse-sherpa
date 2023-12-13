@@ -227,14 +227,6 @@ $file = json_decode($file, true);
   $percentageCheck = 0;
   $checkPrint = "";
   $checkColor = "";
-  if ($percentageCheck >= 400){
-    $checkPrint = "Completed";
-    $checkColor = "lime";
-  }
-  if ($percentageCheck < 400){
-    $checkPrint = "Not Completed";
-    $checkColor = "#bf2121";
-  }
   if ($percentCheck == false){
     $checkPrint2 = "YES";
     $checkColor2 = "#04A731";
@@ -245,10 +237,10 @@ $file = json_decode($file, true);
   }
   foreach ($file as $y) {
   ?>
-    <h4 style="font-family: Arial"><mark> Do I Qualify for IDS? </mark></h4><h4 style="color: <?= $checkColor2?>" ><b> <?php echo $checkPrint2?> </b>  </h4>
+    <h5 style="font-family: Arial"><mark> Do I Qualify for IDS? </mark></h5><h4 style="color: <?= $checkColor2?>" ><b> <?php echo $checkPrint2?> </b>  </h4>
     <p style="font-size: 25px"><mark> <b>NOTE:</b> While it may say you've completed IDS below, you, yourself, still need to verify the requirement above certain Academies to ensure that you still qualify! </mark></p>
     <div style="background-color:<?= $y[0]['color'] ?> " class="header"><a href="<?= $y[0]['url'] ?> " target="_blank"><img class="badge" style="border-radius: 50%; border: 5px solid black" src="<?= $y[0]['logo'] ?>"></a>
-      <h3><?= $y[0]['name'] ?> </h3><h4 style = "color: <?= $checkColor ?> ">(<?= $checkPrint ?>)</h4>
+      <h3><?= $y[0]['name'] ?> </h3>
     </div>
     <div class="grid-container">
       <?php
@@ -369,8 +361,18 @@ $file = json_decode($file, true);
       ?>
     </div>
   <?php
+  if ($percentageCheck >= 4){
+    $checkPrint = "IDS Completed";
+    $checkColor = "lime";
+  }
+  if ($percentageCheck < 4){
+    $checkPrint = "IDS Not Completed";
+    $checkColor = "#bf2121";
+  }
+  
   }
   ?>
+  <h4 style = "color: <?= $checkColor ?> ">(<?= $checkPrint ?>)</h4>
 </body>
 
 </html>
@@ -406,10 +408,16 @@ $file = json_decode($file, true);
   }
   h4 {
     flex-grow: 1;
-    font-size: 25px;
+    font-size: 40px;
     text-align: center;
   }
-
+  h5 {
+    flex-grow: 1;
+    font-size: 25px;
+    text-align: center;
+    color: white;
+    padding: 5px;
+  }
   body {
     background-color: white;
     max-width: 1250px;
