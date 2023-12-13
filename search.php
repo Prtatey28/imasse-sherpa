@@ -173,9 +173,9 @@ $file = json_decode($file, true);
         <div class="path1">
           <h2>
             <p style="color: blue;"><u><?php echo $pathwayName ?> </u></p>
-            <p>Pathway Progress: <?= $percent ?> Completed</p>
-            <p><i><mark>Foundation Classes: <?= $foundationPercent ?> Completed</mark></p>
-            <p><mark>Supporting Classes: <?= $supportingPercent ?> Completed</mark></i></p>
+            <p><mark>Pathway Progress: <?= $percent ?> Completed</mark></p>
+            <p><i>Foundation Classes: <?= $foundationPercent ?> Completed</p>
+            <p>Supporting Classes: <?= $supportingPercent ?> Completed</i></p>
           </h2>
           <ul>
             <p2><i><u>Completed Foundation Classes (Listed Below): <?= $foundationCount ?> credits / <?= $foundationMin ?> credits</i></u></p2>
