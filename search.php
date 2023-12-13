@@ -331,7 +331,6 @@ $file = json_decode($file, true);
 <div class="path2">
           <h2>
             <p style="color: blue;"><u><?php echo $pathwayName ?> </u></p>
-
             <p><i><mark>Classes: <?= $foundationPercent ?> Completed</mark></p>
             <p><mark> <?php echo $partText ?> </mark></i></p>
           </h2>
