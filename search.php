@@ -404,7 +404,6 @@ $file = json_decode($file, true);
     max-width: 100%;
     max-height: 100%;
   }
-
   .badge2 {
     max-width: 8%;
     height: auto;
@@ -413,14 +412,12 @@ $file = json_decode($file, true);
     position: absolute;
     left: 1px;
   }
-
   .header {
     padding: 10px;
     display: flex;
     border-radius: 360px;
     margin-top: 10px;
   }
-
   h3 {
     flex-grow: 1;
     font-size: 25px;
@@ -428,13 +425,11 @@ $file = json_decode($file, true);
     color: white;
     padding: 25px;
   }
-
   h4 {
     flex-grow: 1;
     font-size: 40px;
     text-align: center;
   }
-
   h5 {
     flex-grow: 1;
     font-size: 25px;
@@ -442,14 +437,12 @@ $file = json_decode($file, true);
     color: white;
     padding: 5px;
   }
-
   body {
     background-color: white;
     max-width: 1250px;
     width: 90%;
     margin: 0 auto;
   }
-
   h1 {
     text-align: left;
     text-decoration: underline;
@@ -457,7 +450,6 @@ $file = json_decode($file, true);
     font-family: lato;
     font-size: 35px;
   }
-
   p {
     text-align: center;
     font-family: arial;
@@ -465,7 +457,6 @@ $file = json_decode($file, true);
     color: black;
     text-indent: 25px;
   }
-
   .p2 {
     text-align: center;
     font-family: arial;
@@ -473,14 +464,12 @@ $file = json_decode($file, true);
     color: black;
     text-indent: 25px;
   }
-
   h2 {
     text-align: center;
     color: black;
     font-family: lato;
     font-size: 20px;
   }
-
   .p3 {
     text-align: left;
     font-family: arial;
@@ -488,25 +477,20 @@ $file = json_decode($file, true);
     color: black;
     text-indent: 25px;
   }
-
   .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
     margin-bottom: 100px;
   }
-
   .container {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
-  .title {
-    font-size: 20px;
-    padding-left: 10px;
+  .text {
+    padding-left: 100px;
   }
-
   form {
     display: none;
   }
