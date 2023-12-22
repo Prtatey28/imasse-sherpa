@@ -11,7 +11,6 @@ $file = json_decode($file, true);
   <title>Sherpa - Pathway Search</title>
 </head>
 <a onClick=history.back()><img class="badge2" src="img/Sherpa_Logo2.png"></a>
-
 <body style="display: none">
   <?php
   $percentCheck = false;
@@ -27,10 +26,6 @@ $file = json_decode($file, true);
         </div>
       </div>
     </div>
-
-
-
-
     <div class="grid-container">
       <?php
       $allClasses = file_get_contents('json/allClasses.json');
@@ -128,7 +123,6 @@ $file = json_decode($file, true);
         if (round((($foundationCount + $supportingCount) / $totalPathway) * 100) >= 100) {
           $percentCheck = true;
         }
-
         //recommended classes checking through classIds
         for ($j = 0; $j < count($pathway); $j++) {
           if (!isset($pathway[$j])) continue;
@@ -347,7 +341,6 @@ $file = json_decode($file, true);
             }
           }
         }
-
         //finding pathway name
         for ($j = 0; $j < count($pathway); $j++) {
           if ($pathway[$j][('creditType')] == ('NAME')) {
@@ -403,11 +396,8 @@ $file = json_decode($file, true);
   ?>
   <h4 style="color: <?= $checkColor ?> ">(<?= $checkPrint ?>)</h4>
 </body>
-
 </html>
 <style>
-  
-
   img {
     width: 280px;
     height: auto;

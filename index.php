@@ -110,7 +110,6 @@
       <a href="https://sites.google.com/jeffcoschools.us/prestontateyama-pathwaypre-che/home" target="_blank"><img src="img/Sherpa_Logo.png"></a>
     </div>
     <p style="position: bottom; text-align:center; font-size:20px;"><mark><b>Enter Your Classes Below and Press the Blue "Check" Button When You Are Ready to Continue</b></mark></p>
-    
     <!--This code is what is run when the search button is pressed. The search bar is turned off, and it sends you to the next webpage, search.php-->
     <form autocomplete="off" id="form" action="/search.php" method="post">
       <div class="autocomplete">
@@ -131,9 +130,9 @@
     var data2 = <?php echo file_get_contents('json/allClasses.json'); ?>;
     var counter = 0;
     let classesEntered = [];
-    function removeClass(classID){
-      document.getElementById("input-"+classID).remove();
-      document.getElementById("list-"+classID).remove();
+    function removeClass(classID) {
+      document.getElementById("input-" + classID).remove();
+      document.getElementById("list-" + classID).remove();
       return false;
     }
     function autocomplete(inp, arr) {
@@ -149,7 +148,6 @@
           input.type = 'hidden';
           input.name = counter;
           input.value = classID;
-          
           form.appendChild(input);
         };
         var updateList = function(classID) {
