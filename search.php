@@ -399,7 +399,7 @@ $file = json_decode($file, true);
 </html>
 <style>
   img {
-    width: 280px;
+    width: 200px;
     height: auto;
     max-width: 100%;
     max-height: 100%;
