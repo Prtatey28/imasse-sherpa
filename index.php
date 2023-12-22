@@ -131,6 +131,11 @@
     var data2 = <?php echo file_get_contents('json/allClasses.json'); ?>;
     var counter = 0;
     let classesEntered = [];
+    function removeClass(classID){
+      document.getElementById("input-"+classID).remove();
+      document.getElementById("list-"+classID).remove();
+      return false;
+    }
     function autocomplete(inp, arr) {
       var currentFocus;
       inp.addEventListener("input", function(e) {
@@ -139,16 +144,19 @@
         var addInput = function() {
           counter++;
           var input = document.createElement("input");
-          input.id = 'hidden';
+          var classID = document.getElementById("input").value;
+          input.id = "input-" + classID;
           input.type = 'text';
           input.name = counter;
-          input.value = document.getElementById("input").value;
+          input.value = classID;
+          
           form.appendChild(input);
         };
-        var updateList = function() {
+        var updateList = function(classID) {
           let list = document.getElementById("classes");
           let li = document.createElement("li");
-          li.innerText = classesEntered[classesEntered.length - 1];
+          li.id = "list-" + classID;
+          li.innerHTML = classesEntered[classesEntered.length - 1] + "<a href=\"javascript:void(0);\" onClick='removeClass(\"" + classID + "\")'> remove</a>";
           list.appendChild(li);
         };
         var a, b, i, val = this.value;
@@ -169,12 +177,14 @@
             b.innerHTML += "<input type='hidden' alt='" + arr[i]['name'] + "' value='" + arr[i]['id'] + "'>";
             b.addEventListener("click", function(e) {
               inp.value = this.getElementsByTagName("input")[0].value;
+              var classID = inp.value;
               addInput();
               closeAllLists();
               document.getElementById("input").value = null;
               inp.name = this.getElementsByTagName("input")[0].alt;
               classesEntered.push(inp.name);
-              updateList();
+              console.log(classID);
+              updateList(classID);
             });
             a.appendChild(b);
           }
