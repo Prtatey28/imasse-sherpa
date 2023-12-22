@@ -17,9 +17,20 @@ $file = json_decode($file, true);
   $percentCheck = false;
   foreach ($file as $y) {
   ?>
-    <div style="background-color:<?= $y[0]['color'] ?> " class="header"><a href="<?= $y[0]['url'] ?> " target="_blank"><img class="badge" style="border-radius: 50%; border: 5px solid black" src="<?= $y[0]['logo'] ?>"></a>
-      <h3><?= $y[0]['name'] ?></h3>
+    <div class="header" style="background-color:<?= $y[0]['color'] ?> ">
+      <div class="container">
+        <div class="img">
+          <a href="<?= $y[0]['url'] ?> " target="_blank"><img class="img" style="border-radius: 50%; border: 5px solid black;" src="<?= $y[0]['logo'] ?>"></a>
+        </div>
+        <div class="text">
+          <h3 style="font-size: 40px;"><?= $y[0]['name'] ?></h3>
+        </div>
+      </div>
     </div>
+
+
+
+
     <div class="grid-container">
       <?php
       $allClasses = file_get_contents('json/allClasses.json');
@@ -83,7 +94,7 @@ $file = json_decode($file, true);
             }
           }
         }
-        
+
         //iteration through list checking for 'b' flag and placing the class based in foundation or supporting
         //depending on whether or not foundation is full or not
         for ($i = 0; $i < count($_POST); $i++) {
@@ -114,7 +125,7 @@ $file = json_decode($file, true);
         $foundationPercent = round(($foundationCount / $foundationMin) * 100) . "%";
         $supportingPercent = round(($supportingCount / $supportingMin) * 100) . "%";
 
-        if (round((($foundationCount + $supportingCount) / $totalPathway) * 100)>=100){
+        if (round((($foundationCount + $supportingCount) / $totalPathway) * 100) >= 100) {
           $percentCheck = true;
         }
 
@@ -172,16 +183,20 @@ $file = json_decode($file, true);
       ?>
         <div class="path1">
           <h2>
-            <p style="color: blue;"><u><?php echo $pathwayName ?> </u></p>
-            <p><mark>Pathway Progress: <?= $percent ?> Completed</mark></p>
+            <p style="color: blue; font-size:20px"><u><?php echo $pathwayName ?> </u></p>
+            <p style=font-size:18px><mark>Pathway Progress: <?= $percent ?> Completed</mark></p>
             <p><i>Foundation Classes: <?= $foundationPercent ?> Completed</p>
             <p>Supporting Classes: <?= $supportingPercent ?> Completed</i></p>
           </h2>
           <ul>
-            <p2><i><u>Completed Foundation Classes (Listed Below): <?= $foundationCount ?> credits / <?= $foundationMin ?> credits</i></u></p2>
+            <p2 style=font-size:18px;background-color:#C7C9C8;color:black;><u>Completed Foundation Classes (Listed Below): <?= $foundationCount ?> credits / <?= $foundationMin ?> credits</u></p2>
             <p><?php
-                foreach ($foundationClasses as $x) {
-                  echo '<li>' . $x . '</li>';
+                if (count($foundationClasses) > 0) {
+                  foreach ($foundationClasses as $x) {
+                    echo '<li>' . $x . '</li>';
+                  }
+                } else {
+                  echo '<li>' . "No selected classes qualify here!" . '</li>';
                 }
                 ?></p>
             <p>
@@ -196,10 +211,14 @@ $file = json_decode($file, true);
               </p>
             </details>
             </p>
-            <p2><i><u>Completed Supporting Classes (Listed Below): <?= $supportingCount ?> credits / <?= $supportingMin ?> credits</i></u></p2>
+            <p2 style=font-size:18px;background-color:#C7C9C8;color:black;><u>Completed Supporting Classes (Listed Below): <?= $supportingCount ?> credits / <?= $supportingMin ?> credits</u></p2>
             <p><?php
-                foreach ($supportingClasses as $x) {
-                  echo '<li>' . $x . '</li>';
+                if (count($supportingClasses) > 0) {
+                  foreach ($supportingClasses as $x) {
+                    echo '<li>' . $x . '</li>';
+                  }
+                } else {
+                  echo '<li>' . "No selected classes qualify here!" . '</li>';
                 }
                 ?></p>
             <details>
@@ -227,20 +246,28 @@ $file = json_decode($file, true);
   $percentageCheck = 0;
   $checkPrint = "";
   $checkColor = "";
-  if ($percentCheck == false){
+  if ($percentCheck == false) {
     $checkPrint2 = "YES";
     $checkColor2 = "#04A731";
   }
-  if ($percentCheck == true){
+  if ($percentCheck == true) {
     $checkPrint2 = "NO";
     $checkColor2 = "#bf2121";
   }
   foreach ($file as $y) {
   ?>
-    <h5 style="font-family: Arial"><mark> Do I Qualify for IDS? </mark></h5><h4 style="color: <?= $checkColor2?>" ><b> <?php echo $checkPrint2?> </b>  </h4>
+    <h5 style="font-family: Arial"><mark> Do I Qualify for IDS? </mark></h5>
+    <h4 style="color: <?= $checkColor2 ?>"><b> <?php echo $checkPrint2 ?> </b> </h4>
     <p style="font-size: 25px"><mark> <b>NOTE:</b> While it may say you've completed IDS below, you, yourself, still need to verify the requirement above certain Academies to ensure that you still qualify! </mark></p>
-    <div style="background-color:<?= $y[0]['color'] ?> " class="header"><a href="<?= $y[0]['url'] ?> " target="_blank"><img class="badge" style="border-radius: 50%; border: 5px solid black" src="<?= $y[0]['logo'] ?>"></a>
-      <h3><?= $y[0]['name'] ?> </h3>
+    <div class="header" style="background-color:<?= $y[0]['color'] ?> ">
+      <div class="container">
+        <div class="img">
+          <a href="<?= $y[0]['url'] ?> " target="_blank"><img class="img" style="border-radius: 50%; border: 5px solid black;" src="<?= $y[0]['logo'] ?>"></a>
+        </div>
+        <div class="text">
+          <h3 style="font-size: 40px;"><?= $y[0]['name'] ?></h3>
+        </div>
+      </div>
     </div>
     <div class="grid-container">
       <?php
@@ -328,17 +355,21 @@ $file = json_decode($file, true);
           }
         }
       ?>
-<div class="path2">
+        <div class="path2">
           <h2>
-            <p style="color: blue;"><u><?php echo $pathwayName ?> </u></p>
-            <p><i><mark>Classes: <?= $foundationPercent ?> Completed</mark></p>
+            <p style="color: blue;font-size:20px"><u><?php echo $pathwayName ?> </u></p>
+            <p style=font-size:18px><i><mark>Classes: <?= $foundationPercent ?> Completed</mark></p>
             <p><mark> <?php echo $partText ?> </mark></i></p>
           </h2>
           <ul>
-            <p2><i><u>Completed Classes (Listed Below): <?= $foundationCount ?> credits / <?= $foundationMin ?> credits</i></u></p2>
+            <p2 style=font-size:18px;background-color:#C7C9C8;color:black;><u>Completed Classes (Listed Below): <?= $foundationCount ?> credits / <?= $foundationMin ?> credits</u></p2>
             <p><?php
-                foreach ($foundationClasses as $x) {
-                  echo '<li>' . $x . '</li>';
+                if (count($foundationClasses) > 0) {
+                  foreach ($foundationClasses as $x) {
+                    echo '<li>' . $x . '</li>';
+                  }
+                } else {
+                  echo '<li>' . "No selected classes qualify here!" . '</li>';
                 }
                 ?></p>
             <p>
@@ -360,26 +391,28 @@ $file = json_decode($file, true);
       ?>
     </div>
   <?php
-  if ($percentageCheck >= 4){
-    $checkPrint = "IDS Completed";
-    $checkColor = "lime";
-  }
-  if ($percentageCheck < 4){
-    $checkPrint = "IDS Not Completed";
-    $checkColor = "#bf2121";
-  }
-  
+    if ($percentageCheck >= 4) {
+      $checkPrint = "IDS Completed";
+      $checkColor = "lime";
+    }
+    if ($percentageCheck < 4) {
+      $checkPrint = "IDS Not Completed";
+      $checkColor = "#bf2121";
+    }
   }
   ?>
-  <h4 style = "color: <?= $checkColor ?> ">(<?= $checkPrint ?>)</h4>
+  <h4 style="color: <?= $checkColor ?> ">(<?= $checkPrint ?>)</h4>
 </body>
 
 </html>
 <style>
-  .badge {
-    max-width: 25%;
+  
+
+  img {
+    width: 280px;
     height: auto;
-    width: auto;
+    max-width: 100%;
+    max-height: 100%;
   }
 
   .badge2 {
@@ -405,11 +438,13 @@ $file = json_decode($file, true);
     color: white;
     padding: 25px;
   }
+
   h4 {
     flex-grow: 1;
     font-size: 40px;
     text-align: center;
   }
+
   h5 {
     flex-grow: 1;
     font-size: 25px;
@@ -417,6 +452,7 @@ $file = json_decode($file, true);
     color: white;
     padding: 5px;
   }
+
   body {
     background-color: white;
     max-width: 1250px;
@@ -468,6 +504,17 @@ $file = json_decode($file, true);
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
     margin-bottom: 100px;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .title {
+    font-size: 20px;
+    padding-left: 10px;
   }
 
   form {

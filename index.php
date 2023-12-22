@@ -109,7 +109,7 @@
     <div class='logo'>
       <a href="https://sites.google.com/jeffcoschools.us/prestontateyama-pathwaypre-che/home" target="_blank"><img src="img/Sherpa_Logo.png"></a>
     </div>
-    <p style="position: bottom; text-align:center; font-size:20px;"><b>Enter Your Classes Below and Press the Blue "Check" Button When You Are Ready to Continue</b></p>
+    <p style="position: bottom; text-align:center; font-size:20px;"><mark><b>Enter Your Classes Below and Press the Blue "Check" Button When You Are Ready to Continue</b></mark></p>
     
     <!--This code is what is run when the search button is pressed. The search bar is turned off, and it sends you to the next webpage, search.php-->
     <form autocomplete="off" id="form" action="/search.php" method="post">
@@ -120,10 +120,10 @@
       <input type="submit" value="Check" name="submit">
     </form>
     <!--This code determines where the title "Classes entered" is located below the search bar-->
-    <p style="background-color:#fff;text-align:center"><u>Classes Entered</u></p>
+    <p style="background-color:#fff;text-align:center;font-size:18px"><b><u>Classes Entered</u></b></p>
     <ul id="classes"></ul>
   </div>
-  <p style="text-align:center; font-size:15px;"><u><b>Questions? </u></b><br> Visit the <a href='https://docs.google.com/document/d/1Sb5T9UpqaVv87lefkwTaRzjJZBBoecEDOivG_zqZh9k/edit?usp=sharing' target="_blank">Wiki</p>
+  <p style="text-align:left; font-size:15px;"><u><b>Questions? </u></b><br> Visit the <a href='https://docs.google.com/document/d/1Sb5T9UpqaVv87lefkwTaRzjJZBBoecEDOivG_zqZh9k/edit?usp=sharing' target="_blank">Wiki</p>
   <!--This is the JavaScript portion of the code. This is how the populating search bar works and and how selected classes are printed below-->
   <script>
     //grabs the php array from above and uses it here for the possible classes search bar
@@ -146,7 +146,7 @@
           var input = document.createElement("input");
           var classID = document.getElementById("input").value;
           input.id = "input-" + classID;
-          input.type = 'text';
+          input.type = 'hidden';
           input.name = counter;
           input.value = classID;
           
@@ -156,7 +156,7 @@
           let list = document.getElementById("classes");
           let li = document.createElement("li");
           li.id = "list-" + classID;
-          li.innerHTML = classesEntered[classesEntered.length - 1] + "<a href=\"javascript:void(0);\" onClick='removeClass(\"" + classID + "\")'> remove</a>";
+          li.innerHTML = classesEntered[classesEntered.length - 1] + " " + "<a href=\"javascript:void(0);\" onClick='removeClass(\"" + classID + "\")'>Remove</a>";
           list.appendChild(li);
         };
         var a, b, i, val = this.value;
@@ -183,7 +183,6 @@
               document.getElementById("input").value = null;
               inp.name = this.getElementsByTagName("input")[0].alt;
               classesEntered.push(inp.name);
-              console.log(classID);
               updateList(classID);
             });
             a.appendChild(b);
