@@ -103,8 +103,8 @@
   <!--This piece of the code is all about making everything show up on the website. This is typical HTML-->
   <!--Title Header-->
   <!--This piece of the code places all of the elements on the website, based on their CSS location, size, and color-->
-  <h1> Welcome to the: Super Helpful Easily Readable Pathway Assistant! </h1>
-  <p style="position: bottom; text-align:center; font-size:30px;"><mark><b>BETA:</b> If you don't see a class listed when you enter it into the search bar, please email prtatey28@gmail.com!</mark></p>
+  <h1 style="background-color: #CCD1D1; color:black;"> Welcome to the: <span style="color:#CB4335">S</span>uper <span style="color:#CB4335">H</span>elpful <span style="color:#CB4335">E</span>asily <span style="color:#CB4335">R</span>eadable <span style="color:#CB4335">P</span>athway <span style="color:#CB4335">A</span>ssistant! </h1>
+  <p style="position: bottom; text-align:center; font-size:30px;"><mark><b>BETA Version:</b> There will be bugs and issues! If you encounter one, please email prtatey28@gmail.com!</mark></p>
   <div class="container">
     <div class='logo'>
       <a href="https://sites.google.com/jeffcoschools.us/prestontateyama-pathwaypre-che/home" target="_blank"><img src="img/Sherpa_Logo.png"></a>
