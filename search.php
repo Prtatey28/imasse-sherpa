@@ -405,9 +405,10 @@ $file = json_decode($file, true);
     max-height: 100%;
   }
   .badge2 {
-    max-width: 8%;
+    max-width: 100%;
+    max-height: 100%;
     height: auto;
-    width: auto;
+    width: 150px;
     vertical-align: top;
     position: absolute;
     left: 1px;
