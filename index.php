@@ -6,22 +6,26 @@
 <!--This is the meta data for the website. It explains the scale and the ratios of the website-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--This is the "tab" name of the website. It will display in all of your tabs of your browser-->
+
 <head>
   <link rel="icon" href="img/Sherpa_Logo2.png">
   <title>Sherpa - Pathway Home</title>
 </head>
 <!--This defines the body element, which includes every single element on the web page-->
-<body style="display: none" onload="pushOldClasses()">
+
+<body style="display: none">
   <!--This is the start of the CSS for designing the website first page HTML uses CSS to understand how to "decorate" things with colors and sizes-->
   <style>
     * {
       box-sizing: border-box;
     }
+
     /*CSS for whole website page*/
     body {
       font: 16px Arial;
       background-color: white;
     }
+
     /*This is the CSS for the live search box of the website*/
     /*the container must be positioned relative:*/
     .autocomplete {
@@ -29,17 +33,20 @@
       display: inline-block;
       width: 80%;
     }
+
     /*This is the CSS for the search box, it adjusts how big it is and the kind of text being inputted*/
     input {
       border: 1px solid transparent;
       padding: 10px;
       font-size: 16px;
     }
+
     /* This is also CSS for the search box. It adjusts color and size of it*/
     input[type=text] {
       background-color: #f1f1f1;
       width: 100%;
     }
+
     /*This is the CSS for the search button of the webpage*/
     input[type=submit] {
       background-color: dodgerblue;
@@ -47,6 +54,7 @@
       cursor: pointer;
       width: 19%;
     }
+
     /*This is the CSS for classes that are populated below when you type in certain letters or numbers*/
     .autocomplete-items {
       position: absolute;
@@ -59,6 +67,7 @@
       left: 0;
       right: 0;
     }
+
     /* These are additional properties for the populating classes below search bar as you type them in*/
     .autocomplete-items div {
       padding: 10px;
@@ -66,37 +75,60 @@
       background-color: #fff;
       border-bottom: 1px solid #d4d4d4;
     }
+
     /*when hovering an item: This will give the color it changes to from white*/
     .autocomplete-items div:hover {
       background-color: #e9e9e9;
     }
+
     /*when navigating through the items using the arrow keys: This will change the color of the highlighted portion*/
     .autocomplete-active {
       background-color: DodgerBlue !important;
       color: #ffffff;
     }
+
     #hidden {
       display: none;
     }
+
     /*adjusts position for search bar, populated search results, logo. Also adjusts logo size */
     .autocomplete {
       position: relative;
       display: inline-block;
     }
+
     .container {
       margin: auto;
       max-width: 500px;
       width: 100%;
     }
+
     .logo {
       text-align: center;
     }
+
     .logo img {
       width: 400px;
     }
+
     h1 {
       text-align: center;
       font-size: 45px;
+    }
+
+    .removeAllButton {
+      cursor: pointer;
+      padding: 5px;
+      color: blue;
+      text-decoration: underline;
+      text-align: center;
+      display: block;
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    .removeAllButton:hover {
+      color: red;
     }
   </style>
   <!--This is the end of the CSS portion of the Code -->
@@ -117,15 +149,18 @@
         <input id="input" type="text" placeholder="Start Typing Class Name" name="input">
       </div>
       <input type="submit" value="Check" name="submit">
+      <div id="hiddenInputs">
+
+      </div>
     </form>
     <!--This code determines where the title "Classes entered" is located below the search bar-->
     <p style="background-color:#fff;text-align:center;font-size:18px"><b><u>Classes Entered</u></b></p>
     <ul id="classes"></ul>
+    <a class="removeAllButton" id="removeAll">Click Here to Remove All Classes!</a>
   </div>
   <p style="text-align:left; font-size:15px;"><u><b>Questions? </u></b><br> Visit the <a href='https://docs.google.com/document/d/1Sb5T9UpqaVv87lefkwTaRzjJZBBoecEDOivG_zqZh9k/edit?usp=sharing' target="_blank">Wiki</p>
   <!--This is the JavaScript portion of the code. This is how the populating search bar works and and how selected classes are printed below-->
   <script>
-    
     //grabs the php array from above and uses it here for the possible classes search bar
     //echo part of code adapted from https://www.geeksforgeeks.org/how-to-pass-a-php-array-to-a-javascript-function/#
     var data2 = <?php echo file_get_contents('json/allClasses.json'); ?>;
@@ -133,12 +168,12 @@
     let classesEntered = [];
     var classID2 = [];
     var className2 = [];
-    
+
     function removeClass(classID) {
       document.getElementById("input-" + classID).remove();
       document.getElementById("list-" + classID).remove();
-      for (var i=0; i<classID2.length; i++){
-        if (classID2[i] == classID){
+      for (var i = 0; i < classID2.length; i++) {
+        if (classID2[i] == classID) {
           classID2.splice(i, 1);
           var stringy = JSON.stringify(classID2);
           localStorage.setItem("classIDs", stringy);
@@ -146,11 +181,12 @@
       }
       return false;
     }
+
     function autocomplete(inp, arr) {
       var currentFocus;
       inp.addEventListener("input", function(e) {
         var btn = document.getElementById('btn');
-        var form = document.getElementById('form');
+        var form = document.getElementById('hiddenInputs');
         var addInput = function() {
           counter++;
           var input = document.createElement("input");
@@ -217,6 +253,7 @@
           }
         }
       });
+
       function addActive(x) {
         if (!x) return false;
         removeActive(x);
@@ -224,11 +261,13 @@
         if (currentFocus < 0) currentFocus = (x.length - 1);
         x[currentFocus].classList.add("autocomplete-active");
       }
+
       function removeActive(x) {
         for (var i = 0; i < x.length; i++) {
           x[i].classList.remove("autocomplete-active");
         }
       }
+
       function closeAllLists(elmnt) {
         var x = document.getElementsByClassName("autocomplete-items");
         for (var i = 0; i < x.length; i++) {
@@ -237,6 +276,7 @@
           }
         }
       }
+
       function escapeRegex(string) {
         return string.replace(/[/\-\\^$*+?.()|[\]{}]/g, '\\$&');
       }
@@ -244,15 +284,54 @@
         closeAllLists(e.target);
       });
     }
-    function pushOldClasses(){
+
+    function form2(newClassIDs) {
+      var btn = document.getElementById('btn');
+      var form = document.getElementById('hiddenInputs');
+      if (newClassIDs != null && newClassIDs.length > 0) {
+        for (var i = 0; i < newClassIDs.length; i++) {
+          counter++;
+          var input = document.createElement("input");
+          input.id = "input-" + newClassIDs[i];
+          input.type = 'hidden';
+          input.name = counter;
+          input.value = newClassIDs[i];
+          form.appendChild(input);
+          classID2.push(newClassIDs[i]);
+          var stringy = JSON.stringify(classID2);
+          localStorage.setItem("classIDs", stringy);
+          let list = document.getElementById("classes");
+          let li = document.createElement("li");
+          for (var j = 0; j < data2.length; j++) {
+            if (data2[j].id == newClassIDs[i]) {
+              classesEntered.push(data2[j].name);
+            }
+          }
+          li.id = "list-" + newClassIDs[i];
+          li.innerHTML = classesEntered[classesEntered.length - 1] + " " + "<a href=\"javascript:void(0);\" onClick='removeClass(\"" + newClassIDs[i] + "\")'>Remove</a>";
+          list.appendChild(li);
+        }
+      }
+    }
+
+    function pushOldClasses() {
       var returnStringy = localStorage.getItem("classIDs");
       var newClassIDs = JSON.parse(returnStringy);
-      console.log(newClassIDs);
-      
+      form2(newClassIDs);
+    }
+
+    function removeAll() {
+      classesEntered = [];
+      document.getElementById('classes').innerHTML = '';
+      document.getElementById('hiddenInputs').innerHTML = '';
+      localStorage.clear();
     }
     //grabbing classes from allClasses.json and sending them into the search bar here
+    document.addEventListener('DOMContentLoaded', pushOldClasses);
     autocomplete(document.getElementById("input"), data2);
     document.getElementsByTagName('body')[0].style = 'display: block';
+    document.getElementById('removeAll').addEventListener("click", removeAll);
   </script>
 </body>
+
 </html>
