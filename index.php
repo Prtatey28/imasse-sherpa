@@ -11,7 +11,7 @@
   <title>Sherpa - Pathway Home</title>
 </head>
 <!--This defines the body element, which includes every single element on the web page-->
-<body style="display: none">
+<body style="display: none" onload="pushOldClasses()">
   <!--This is the start of the CSS for designing the website first page HTML uses CSS to understand how to "decorate" things with colors and sizes-->
   <style>
     * {
@@ -125,14 +125,25 @@
   <p style="text-align:left; font-size:15px;"><u><b>Questions? </u></b><br> Visit the <a href='https://docs.google.com/document/d/1Sb5T9UpqaVv87lefkwTaRzjJZBBoecEDOivG_zqZh9k/edit?usp=sharing' target="_blank">Wiki</p>
   <!--This is the JavaScript portion of the code. This is how the populating search bar works and and how selected classes are printed below-->
   <script>
+    
     //grabs the php array from above and uses it here for the possible classes search bar
     //echo part of code adapted from https://www.geeksforgeeks.org/how-to-pass-a-php-array-to-a-javascript-function/#
     var data2 = <?php echo file_get_contents('json/allClasses.json'); ?>;
     var counter = 0;
     let classesEntered = [];
+    var classID2 = [];
+    var className2 = [];
+    
     function removeClass(classID) {
       document.getElementById("input-" + classID).remove();
       document.getElementById("list-" + classID).remove();
+      for (var i=0; i<classID2.length; i++){
+        if (classID2[i] == classID){
+          classID2.splice(i, 1);
+          var stringy = JSON.stringify(classID2);
+          localStorage.setItem("classIDs", stringy);
+        }
+      }
       return false;
     }
     function autocomplete(inp, arr) {
@@ -149,6 +160,9 @@
           input.name = counter;
           input.value = classID;
           form.appendChild(input);
+          classID2.push(classID);
+          var stringy = JSON.stringify(classID2);
+          localStorage.setItem("classIDs", stringy);
         };
         var updateList = function(classID) {
           let list = document.getElementById("classes");
@@ -229,6 +243,12 @@
       document.addEventListener("click", function(e) {
         closeAllLists(e.target);
       });
+    }
+    function pushOldClasses(){
+      var returnStringy = localStorage.getItem("classIDs");
+      var newClassIDs = JSON.parse(returnStringy);
+      console.log(newClassIDs);
+      
     }
     //grabbing classes from allClasses.json and sending them into the search bar here
     autocomplete(document.getElementById("input"), data2);
