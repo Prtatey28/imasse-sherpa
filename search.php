@@ -11,6 +11,7 @@ $file = json_decode($file, true);
   <title>Sherpa - Pathway Search</title>
 </head>
 <a onClick=history.back()><img class="badge2" src="img/Sherpa_Logo2.png"></a>
+<h8><--- Click SHERPA logo to go back to home screen and update classes (progress should autosave)</h8>
 <body style="display: none">
   <?php
   $percentCheck = false;
@@ -418,6 +419,10 @@ $file = json_decode($file, true);
     display: flex;
     border-radius: 360px;
     margin-top: 10px;
+  }
+  h8{
+    background-color: yellow;
+    font-size: 20px;
   }
   h3 {
     flex-grow: 1;
