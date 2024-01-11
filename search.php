@@ -235,6 +235,7 @@ $file = json_decode($file, true);
     </div>
   <?php
   }
+  /*
   //FOR IDS PATHWAY CODE STARTS HERE
   $file = file_get_contents("json/IDSsearchProgram.json");
   $file = json_decode($file, true);
@@ -348,7 +349,8 @@ $file = json_decode($file, true);
             $pathwayName = $pathway[$j][('name')];
           }
         }
-      ?>
+        */
+      ?><!--
         <div class="path2">
           <h2>
             <p style="color: blue;font-size:20px"><u><?php echo $pathwayName ?> </u></p>
@@ -381,7 +383,7 @@ $file = json_decode($file, true);
           </ul>
         </div>
       <?php
-      }
+      //}
       ?>
     </div>
   <?php
@@ -393,9 +395,10 @@ $file = json_decode($file, true);
       $checkPrint = "IDS Not Completed";
       $checkColor = "#bf2121";
     }
-  }
+  //}
   ?>
   <h4 style="color: <?= $checkColor ?> ">(<?= $checkPrint ?>)</h4>
+-->
 </body>
 </html>
 <style>
