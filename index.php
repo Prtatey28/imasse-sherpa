@@ -136,7 +136,7 @@
   <!--Title Header-->
   <!--This piece of the code places all of the elements on the website, based on their CSS location, size, and color-->
   <h1 style="background-color: #CCD1D1; color:black;"> Welcome to the: <span style="color:#CB4335">S</span>uper <span style="color:#CB4335">H</span>elpful <span style="color:#CB4335">E</span>asily <span style="color:#CB4335">R</span>eadable <span style="color:#CB4335">P</span>athway <span style="color:#CB4335">A</span>ssistant! </h1>
-  <p style="position: bottom; text-align:center; font-size:30px;"><mark><b>BETA Version:</b> There will be bugs and issues! If you encounter one, please email prtatey28@gmail.com!</mark></p>
+  <p style="position: bottom; text-align:center; font-size:30px;"><mark><b>BETA Version:</b> There will be bugs and issues! Visit the <a href='https://docs.google.com/document/d/1Sb5T9UpqaVv87lefkwTaRzjJZBBoecEDOivG_zqZh9k/edit?usp=sharing' target="_blank"><b>Wiki</a></b> if you have issues! </mark></p>
   <div class="container">
     <div class='logo'>
       <a href="https://sites.google.com/jeffcoschools.us/prestontateyama-pathwaypre-che/home" target="_blank"><img src="img/Sherpa_Logo.png"></a>

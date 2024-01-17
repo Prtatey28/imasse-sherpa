@@ -235,7 +235,6 @@ $file = json_decode($file, true);
     </div>
   <?php
   }
-  /*
   //FOR IDS PATHWAY CODE STARTS HERE
   $file = file_get_contents("json/IDSsearchProgram.json");
   $file = json_decode($file, true);
@@ -252,6 +251,7 @@ $file = json_decode($file, true);
   }
   foreach ($file as $y) {
   ?>
+    <p style="font-family: Arial; background-color:yellow; color:black; font-size: 25px"> Not sure what IDS is? Click <a href='https://docs.google.com/document/d/1Sb5T9UpqaVv87lefkwTaRzjJZBBoecEDOivG_zqZh9k/edit?usp=sharing' target="_blank"><b>HERE</b></a> to check wiki. Scroll to the bottom of the FRQ and find highlighted portion. </mark></p>
     <h5 style="font-family: Arial"><mark> Do I Qualify for IDS? </mark></h5>
     <h4 style="color: <?= $checkColor2 ?>"><b> <?php echo $checkPrint2 ?> </b> </h4>
     <p style="font-size: 25px"><mark> <b>NOTE:</b> While it may say you've completed IDS below, you, yourself, still need to verify the requirement above certain Academies to ensure that you still qualify! </mark></p>
@@ -349,8 +349,7 @@ $file = json_decode($file, true);
             $pathwayName = $pathway[$j][('name')];
           }
         }
-        */
-      ?><!--
+      ?>
         <div class="path2">
           <h2>
             <p style="color: blue;font-size:20px"><u><?php echo $pathwayName ?> </u></p>
@@ -383,7 +382,7 @@ $file = json_decode($file, true);
           </ul>
         </div>
       <?php
-      //}
+      }
       ?>
     </div>
   <?php
@@ -395,10 +394,9 @@ $file = json_decode($file, true);
       $checkPrint = "IDS Not Completed";
       $checkColor = "#bf2121";
     }
-  //}
+  }
   ?>
   <h4 style="color: <?= $checkColor ?> ">(<?= $checkPrint ?>)</h4>
--->
 </body>
 </html>
 <style>
