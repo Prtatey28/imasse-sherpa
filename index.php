@@ -142,7 +142,10 @@
       <a href="https://sites.google.com/jeffcoschools.us/prestontateyama-pathwaypre-che/home" target="_blank"><img src="img/Sherpa_Logo.png"></a>
     </div>
     <p style="position: bottom; text-align:center; font-size:20px;"><mark>Enter Your Classes Below, <b>BY SEMESTER,</b> and Press the Blue "Check" Button When You Are Ready to Continue</mark></p>
-    <p style="position: bottom; text-align:center; font-size:18px;"><b>NOTE:</b> Multiple year classes are subjugated by "I" not "#." Ex: Algebra 2 = Algebra II. Also, Math 4th year is its own class, make sure to add it if it applies to you!</p>
+    <p style="position: bottom; text-align:center; font-size:18px;"><b>NOTES:</b> <ul><li>Multiple year classes are subjugated by "I" not "#." (Ex: Algebra 2 = Algebra II.)</li> 
+      <li>Math 4th year is its own class, make sure to add it if it applies to you!</li>
+      <li>Geometry in construction and AMPED are their own classes (Ex: Add AMPED, not AMPED & Algebra I)</li>
+    </ul></p>
     <!--This code is what is run when the search button is pressed. The search bar is turned off, and it sends you to the next webpage, search.php-->
     <form autocomplete="off" id="form" action="/search.php" method="post">
       <div class="autocomplete">
