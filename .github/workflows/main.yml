@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: php classPull.php
-      - uses: EndBug/add-and-commit@v9 
+      - uses: EndBug/add-and-commit@v9
         with:
           add: 'json'
       - uses: superfly/flyctl-actions/setup-flyctl@master
