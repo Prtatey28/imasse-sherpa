@@ -154,7 +154,7 @@
       <li class="list-1-li">Multiple year classes are subjugated by "I" not "#." (Ex: Algebra 2 = Algebra II.)</li> 
       <li class="list-1-li">Math 4th year is its own class, make sure to add it if it applies to you!</li>
       <li class="list-1-li">Geometry in construction and AMPED are their own classes (Ex: Add AMPED, not AMPED + Algebra I)</li>
-    </ul></p>test-->
+    </ul></p>-->
     <!--This code is what is run when the search button is pressed. The search bar is turned off, and it sends you to the next webpage, search.php-->
     <form autocomplete="off" id="form" action="/search.php" method="post">
       <div class="autocomplete">
