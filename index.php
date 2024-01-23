@@ -6,13 +6,11 @@
 <!--This is the meta data for the website. It explains the scale and the ratios of the website-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!--This is the "tab" name of the website. It will display in all of your tabs of your browser-->
-
 <head>
   <link rel="icon" href="img/Sherpa_Logo2.png">
   <title>Sherpa - Pathway Home</title>
 </head>
 <!--This defines the body element, which includes every single element on the web page-->
-
 <body style="display: none">
   <!--This is the start of the CSS for designing the website first page HTML uses CSS to understand how to "decorate" things with colors and sizes-->
   <style>
@@ -130,10 +128,12 @@
     .removeAllButton:hover {
       color: red;
     }
-    .list-1{
+
+    .list-1 {
       padding: 5px;
     }
-    .list-1-li{
+
+    .list-1-li {
       margin-bottom: 10px;
     }
   </style>
@@ -148,14 +148,15 @@
       <a href="https://sites.google.com/jeffcoschools.us/prestontateyama-pathwaypre-che/home" target="_blank"><img src="img/Sherpa_Logo.png"></a>
     </div>
     <p style="position: bottom; text-align:center; font-size:20px;"><mark>Enter Your Classes Below, <b>BY SEMESTER,</b> and Press the Blue "Verify" Button When You Are Ready to Continue</mark></p>
-    <p style="position: bottom; text-align:center; font-size:18px; background-color:pink;"><b><u>Keep In Mind:</u></b> 
+    <p style="position: bottom; text-align:center; font-size:18px; background-color:pink;"><b><u>Keep In Mind:</u></b>
     <ul class="list-1">
       <li class="list-1-li"><mark>You are adding every single <b>PASSED</b> class from your highschool career so far, including the classes you are taking this semester</mark></li>
-      <li class="list-1-li">Multiple year classes are subjugated by "I" not "#." (Ex: Algebra 2 = Algebra II.)</li> 
+      <li class="list-1-li">Multiple year classes are subjugated by "I" not "#." (Ex: Algebra 2 = Algebra II.)</li>
       <li class="list-1-li">Math 4th year is its own class, make sure to add it if it applies to you!</li>
       <li class="list-1-li">Geometry in construction and AMPED are their own classes (Ex: Add AMPED, not AMPED + Algebra I)</li>
       <li class="list-1-li">Full list of available classes can be found <a href='https://docs.google.com/document/d/1DWIG5TPWUFKCGuHTxO5pViDzF1kx9RVS61CTlSSL4i0/edit?usp=sharing' target="_blank"><b>HERE</b></a></li>
-    </ul></p>
+    </ul>
+    </p>
     <!--This code is what is run when the search button is pressed. The search bar is turned off, and it sends you to the next webpage, search.php-->
     <form autocomplete="off" id="form" action="/search.php" method="post">
       <div class="autocomplete">
@@ -164,7 +165,6 @@
       </div>
       <input type="submit" value="Verify" name="submit">
       <div id="hiddenInputs">
-
       </div>
     </form>
     <!--This code determines where the title "Classes entered" is located below the search bar-->
@@ -347,5 +347,4 @@
     document.getElementById('removeAll').addEventListener("click", removeAll);
   </script>
 </body>
-
 </html>
